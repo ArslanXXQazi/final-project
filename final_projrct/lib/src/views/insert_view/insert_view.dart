@@ -34,39 +34,41 @@ class _InsertViewState extends State<InsertView> {
       ),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: width*.03,vertical: height*.02),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomTextFromField(
-                controller: questionController,
-                hintText: "Enter your question",
-                labelText: "Enter your question",
-            ),
-            CustomTextFromField(
-                controller: firstOptionController,
-                hintText: "Enter your first option",
-                labelText: "Enter your first option",
-            ),
-            CustomTextFromField(
-                controller: secondOptionController,
-                hintText: "Enter your second option",
-                labelText: "Enter your second option",
-            ),
-            CustomTextFromField(
-                controller: thirdOptionController,
-                hintText: "Enter your third option",
-                labelText: "Enter your third option",
-            ),
-            CustomTextFromField(
-                controller: fourthOptionController,
-                hintText: "Enter your fourth option",
-                labelText: "Enter your fourth option",
-            ),
-            CustomButton(
-                onTap: (){},
-                name: "Insert Data")
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomTextFromField(
+                  controller: questionController,
+                  hintText: "Enter your question",
+                  labelText: "Enter your question",
+              ),
+              CustomTextFromField(
+                  controller: firstOptionController,
+                  hintText: "Enter your first option",
+                  labelText: "Enter your first option",
+              ),
+              CustomTextFromField(
+                  controller: secondOptionController,
+                  hintText: "Enter your second option",
+                  labelText: "Enter your second option",
+              ),
+              CustomTextFromField(
+                  controller: thirdOptionController,
+                  hintText: "Enter your third option",
+                  labelText: "Enter your third option",
+              ),
+              CustomTextFromField(
+                  controller: fourthOptionController,
+                  hintText: "Enter your fourth option",
+                  labelText: "Enter your fourth option",
+              ),
+              CustomButton(
+                  onTap: (){},
+                  name: "Insert Data")
 
-        ],),
+          ],),
+        ),
       ),
     );
   }
