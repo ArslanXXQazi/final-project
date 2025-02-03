@@ -13,6 +13,7 @@ class _InsertViewState extends State<InsertView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: CustomText(
           text: 'Insert Data ',
@@ -20,8 +21,16 @@ class _InsertViewState extends State<InsertView> {
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
-
       ),
+      body: Column(children: [
+
+        CustomText(text: 'Enter Your Question'),
+        TextFormField(
+          decoration: InputDecoration(
+            border: InputBorder.none
+          ),)
+
+      ],),
     );
   }
 }
