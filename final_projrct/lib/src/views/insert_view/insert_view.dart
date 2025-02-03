@@ -57,7 +57,7 @@ class _InsertViewState extends State<InsertView> {
                 labelText: "Enter your third option",
             ),
             CustomTextFromField(
-                controller: thirdOptionController,
+                controller: fourthOptionController,
                 hintText: "Enter your fourth option",
                 labelText: "Enter your fourth option",
             ),
