@@ -1,4 +1,5 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:flutter/material.dart';
 
@@ -61,6 +62,9 @@ class _InsertViewState extends State<InsertView> {
                 hintText: "Enter your fourth option",
                 labelText: "Enter your fourth option",
             ),
+            CustomButton(
+                onTap: (){},
+                name: "Insert Data")
 
         ],),
       ),
