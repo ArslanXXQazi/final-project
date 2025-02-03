@@ -61,6 +61,15 @@ class _InsertViewState extends State<InsertView> {
                 hintText: "Enter your fourth option",
                 labelText: "Enter your fourth option",
             ),
+            Container(
+              height: height*.06,
+              width: width*1,
+             decoration: BoxDecoration(
+               color: Colors.orange,
+               borderRadius: BorderRadius.circular(10),
+             ),
+              child: Center(child: CustomText(text: 'Inter Data',color: Colors.white,fontSize: 20,)),
+            )
         ],),
       ),
     );
