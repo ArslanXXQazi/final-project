@@ -13,9 +13,10 @@ class CustomTextFromField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
-        hintText: 'Enter Your Question',
-        labelText: 'Enter Your Question',
+        hintText: hintText,
+        labelText: labelText,
         border: InputBorder.none,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
