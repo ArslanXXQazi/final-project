@@ -22,11 +22,13 @@ class _InsertViewState extends State<InsertView> {
           fontWeight: FontWeight.bold,
         ),
       ),
-      body: Column(children: [
-
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
         CustomText(text: 'Enter Your Question'),
         TextFormField(
           decoration: InputDecoration(
+            hintText: 'Enter Your Question',
             border: InputBorder.none,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -34,9 +36,9 @@ class _InsertViewState extends State<InsertView> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.grey),
+              borderSide: BorderSide(color: Colors.blue),
             ),
-            
+
           ),)
 
       ],),
