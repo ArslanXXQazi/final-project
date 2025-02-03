@@ -27,7 +27,11 @@ class _InsertViewState extends State<InsertView> {
         CustomText(text: 'Enter Your Question'),
         TextFormField(
           decoration: InputDecoration(
-            border: InputBorder.none
+            border: InputBorder.none,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Colors.grey),
+            )
           ),)
 
       ],),
