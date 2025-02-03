@@ -18,7 +18,6 @@ class CustomTextFromField extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(color: Colors.blue),
         ),
-
       ),);
   }
 }
