@@ -1,4 +1,5 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:flutter/material.dart';
 
 class InsertView extends StatefulWidget {
@@ -9,6 +10,12 @@ class InsertView extends StatefulWidget {
 }
 
 class _InsertViewState extends State<InsertView> {
+
+  TextEditingController questionController=TextEditingController();
+  TextEditingController firstOptionController=TextEditingController();
+  TextEditingController secondOptionController=TextEditingController();
+  TextEditingController thirdOptionController=TextEditingController();
+  TextEditingController fourthOptionController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     final height=MediaQuery.sizeOf(context).height;
@@ -29,8 +36,16 @@ class _InsertViewState extends State<InsertView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-
+            CustomTextFromField(
+                controller: questionController,
+                hintText: "Enter your question",
+                labelText: "Enter your question",
+            ),
+            CustomTextFromField(
+                controller: firstOptionController,
+                hintText: "Enter your first option",
+                labelText: "Enter your first option",
+            )
         ],),
       ),
     );
