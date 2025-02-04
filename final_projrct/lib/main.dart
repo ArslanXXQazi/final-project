@@ -1,3 +1,4 @@
+import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
 import 'package:final_projrct/src/views/home_views/insert_view/insert_view.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: InsertView(),
+      home: FetchView()
+      //InsertView(),
     );
   }
 }

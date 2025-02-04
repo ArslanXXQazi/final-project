@@ -7,6 +7,8 @@ class FetchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height=MediaQuery.sizeOf(context).height;
+    final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -18,6 +20,16 @@ class FetchView extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
+      body: Column(children: [
+        Container(
+          height: height*.2,
+          width: width*1,
+          decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.circular(10),
+          ),
+        )
+      ],),
     );
   }
 }
