@@ -1,6 +1,8 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
+import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InsertView extends StatefulWidget {
@@ -64,7 +66,10 @@ class _InsertViewState extends State<InsertView> {
                   labelText: "Enter your fourth option",
               ),
               CustomButton(
-                  onTap: (){},
+                  onTap: ()
+                  {
+                    Navigator.push(context, CupertinoPageRoute(builder: (context)=>FetchView()));
+                  },
                   name: "Insert Data")
 
           ],),
