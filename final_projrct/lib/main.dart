@@ -1,4 +1,4 @@
-import 'package:final_projrct/src/views/insert_view/insert_view.dart';
+import 'package:final_projrct/src/views/home_views/insert_view/insert_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
