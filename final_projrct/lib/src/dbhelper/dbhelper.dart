@@ -18,7 +18,7 @@ class DbClass {
   }
   _initDatabase() async {
     Directory document=await getApplicationDocumentsDirectory();
-    String path=join(document.path,'DbQuiz');
+    String path=join(document.path,'DbQuiz.db');
     return await  openDatabase(path,version: 1,onCreate: _onCreate);
 
   }
@@ -52,7 +52,7 @@ class DbClass {
     };
 
     var check= await db.insert('questions', data);
-    if(check==null)
+    if(check==0)
       {
         print('Data Did not Insert');
         return 0;
