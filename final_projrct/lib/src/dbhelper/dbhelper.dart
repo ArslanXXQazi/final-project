@@ -42,6 +42,31 @@ class DbClass {
 
   create(MainModel model) async
   {
+    Database db=await instance.database;
+    final data={
+      'question':model.question,
+      'option1':model.option1,
+      'option2':model.option2,
+      'option3':model.option3,
+      'option4':model.option4,
+    };
+
+    var check=db.insert('DbQuiz', data);
+    if(check==null)
+      {
+        print('Data Did not Insert');
+      }
+    else
+      {
+        print('Data  Insert successfully');
+      }
+
+  }
+
+
+  read()async
+  {
+    Database db=await instance.database;
     
   }
 
