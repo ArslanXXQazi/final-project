@@ -14,11 +14,11 @@ class _FetchViewState extends State<FetchView> {
   @override
   DbClass dbClass= DbClass.instance;
   List<Map<String,dynamic>> data=[
-    
-  ];
-  fetchData()
-  {
 
+  ];
+  fetchData() async
+  {
+    var fetched = await dbClass.read();
   }
 
   Widget build(BuildContext context) {
