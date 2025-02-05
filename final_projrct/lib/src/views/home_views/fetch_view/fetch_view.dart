@@ -1,5 +1,6 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
+import 'package:final_projrct/src/model/main_model.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,7 +19,16 @@ class _FetchViewState extends State<FetchView> {
   ];
   fetchData() async
   {
-    var fetched = await dbClass.read();
+    var fetchedDataList = await dbClass.read();
+     data=fetchedDataList.map((noteMap){
+       return MainModel(
+           question: noteMap['question'],
+           option1: noteMap['option1'],
+           option2: noteMap['option2'],
+           option3: noteMap['option3'],
+           option4: noteMap['option4'],
+       )
+     }).toList();
   }
 
   Widget build(BuildContext context) {
