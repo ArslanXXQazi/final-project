@@ -18,9 +18,9 @@ class _InsertViewState extends State<InsertView> {
 
   TextEditingController questionController=TextEditingController();
   TextEditingController option1Controller=TextEditingController();
-  TextEditingController secondOptionController=TextEditingController();
-  TextEditingController thirdOptionController=TextEditingController();
-  TextEditingController fourthOptionController=TextEditingController();
+  TextEditingController option2Controller=TextEditingController();
+  TextEditingController option3Controller=TextEditingController();
+  TextEditingController option4Controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     final height=MediaQuery.sizeOf(context).height;
@@ -53,32 +53,44 @@ class _InsertViewState extends State<InsertView> {
                   labelText: "Enter your first option",
               ),
               CustomTextFromField(
-                  controller: secondOptionController,
+                  controller: option2Controller,
                   hintText: "Enter your second option",
                   labelText: "Enter your second option",
               ),
               CustomTextFromField(
-                  controller: thirdOptionController,
+                  controller: option3Controller,
                   hintText: "Enter your third option",
                   labelText: "Enter your third option",
               ),
               CustomTextFromField(
-                  controller: fourthOptionController,
+                  controller: option4Controller,
                   hintText: "Enter your fourth option",
                   labelText: "Enter your fourth option",
               ),
               CustomButton(
                   onTap: () async
                   {
-                    DbClass dbclass=DbClass.instance;
-
-                    MainModel model=MainModel(
-                        question: questionController.text,
-                        option1: option1Controller.text,
-                        option2: secondOptionController.text,
-                        option3: thirdOptionController.text,
-                        option4: fourthOptionController.text,
-                    );
+                   if(questionController.text.isNotEmpty && option1Controller.text.isNotEmpty&&option2Controller.text.isNotEmpty&&option3Controller.text.isNotEmpty&&option4Controller.text.isNotEmpty)
+                     {
+                       DbClass dbclass=DbClass.instance;
+                       MainModel model=MainModel(
+                         question: questionController.text,
+                         option1: option1Controller.text,
+                         option2: option2Controller.text,
+                         option3: option3Controller.text,
+                         option4: option4Controller.text,
+                       );
+                       await dbclass.create(model);
+                       ScaffoldMessenger.of(context).showSnackBar(
+                           SnackBar(content: Text("Data inserted successfully!"))
+                       );
+                     }
+                   else
+                     {
+                       ScaffoldMessenger.of(context).showSnackBar(
+                           SnackBar(content: Text("Please Enter Question & Options First!"))
+                       );
+                     }
 
                   },
                   name: "Insert Data")
