@@ -53,7 +53,8 @@ class _FetchViewState extends State<FetchView> {
         ),
       ),
      body: ListView.builder(
-       
+       itemCount: data.length,
+       itemBuilder: ,
      ),
     );
   }
