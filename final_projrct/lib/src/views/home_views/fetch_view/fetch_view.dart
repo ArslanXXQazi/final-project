@@ -131,6 +131,7 @@ class _FetchViewState extends State<FetchView> {
           option2: noteMap['option2'],
           option3: noteMap['option3'],
           option4: noteMap['option4'],
+          id: noteMap['id']
         );
       }).toList();
       setState(() {});
@@ -162,28 +163,36 @@ class _FetchViewState extends State<FetchView> {
         itemBuilder: (context, index) {
           return Padding(
             padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
-            child: Container(
-              height: height*.35,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: width*.02),
-                child: Column(
-                  children: [
-                    SizedBox(height: height * .01),
-                    CustomContainer(text:data[index].question??""),
-                    SizedBox(height: height * .01),
-                    CustomContainer(text: data[index].option1??""),
-                    SizedBox(height: height * .01),
-                    CustomContainer(text: data[index].option2??""),
-                    SizedBox(height: height * .01),
-                    CustomContainer(text: data[index].option3??""),
-                    SizedBox(height: height * .01),
-                    CustomContainer(text: data[index].option4 ??""),
+            child: GestureDetector(
+              onTap: (){
+                dbClass.deleteData(data[index].id!);
+                setState(() {
+                  data.removeAt(index);
+                });
+              },
+              child: Container(
+                height: height*.35,
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: width*.02),
+                  child: Column(
+                    children: [
+                      SizedBox(height: height * .01),
+                      CustomContainer(text:data[index].question??""),
+                      SizedBox(height: height * .01),
+                      CustomContainer(text: data[index].option1??""),
+                      SizedBox(height: height * .01),
+                      CustomContainer(text: data[index].option2??""),
+                      SizedBox(height: height * .01),
+                      CustomContainer(text: data[index].option3??""),
+                      SizedBox(height: height * .01),
+                      CustomContainer(text: data[index].option4 ??""),
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

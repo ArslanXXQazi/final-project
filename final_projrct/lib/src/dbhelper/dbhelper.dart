@@ -73,4 +73,9 @@ class DbClass {
    return result;
   }
 
+  Future<int> deleteData(int id) async {
+    Database db=await instance.database;
+    return await db.delete('questions',where: 'id=?',whereArgs: [id]);
+  }
+
 }
