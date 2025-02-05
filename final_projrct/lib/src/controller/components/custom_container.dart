@@ -14,9 +14,6 @@ class CustomContainer extends StatelessWidget {
     return  Container(
       height: height*.06,
       width: width * 1,
-      decoration: BoxDecoration(
-     borderRadius: BorderRadius.circular(10),
-  ),
       child: CustomText(text:text ),
     );
   }

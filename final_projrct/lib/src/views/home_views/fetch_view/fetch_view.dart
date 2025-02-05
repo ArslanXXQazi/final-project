@@ -168,20 +168,23 @@ class _FetchViewState extends State<FetchView> {
                 color: Colors.grey,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Column(
-                children: [
-                  SizedBox(height: height * .01),
-                  CustomContainer(text: data[index].question??""),
-                  SizedBox(height: height * .01),
-                  CustomContainer(text: data[index].option1??""),
-                  SizedBox(height: height * .01),
-                  CustomContainer(text: data[index].option2??""),
-                  SizedBox(height: height * .01),
-                  CustomContainer(text: data[index].option3??""),
-                  SizedBox(height: height * .01),
-                  CustomContainer(text: data[index].option4 ??""),
+              child: Padding(
+                padding:  EdgeInsets.symmetric(horizontal: width*.02),
+                child: Column(
+                  children: [
+                    SizedBox(height: height * .01),
+                    CustomContainer(text:data[index].question??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option1??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option2??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option3??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option4 ??""),
 
-                ],
+                  ],
+                ),
               ),
             ),
           );
