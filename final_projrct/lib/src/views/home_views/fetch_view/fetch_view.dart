@@ -83,7 +83,7 @@ class _FetchViewState extends State<FetchView> {
            Container(
              height: height*.1,
              width: width*1,
-             child: CustomText(text: data[index].question??""),
+             child: CustomText(text: data[index].option4??""),
            ),
            SizedBox(height: height*.02,),
          ],);
