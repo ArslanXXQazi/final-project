@@ -40,7 +40,7 @@ class DbClass {
   }
 
 
-  create(MainModel model) async
+   Future<int> create(MainModel model) async
   {
     Database db=await instance.database;
     final data={
@@ -55,10 +55,12 @@ class DbClass {
     if(check==null)
       {
         print('Data Did not Insert');
+        return 0;
       }
     else
       {
         print('Data  Insert successfully');
+        return 1;
       }
 
   }

@@ -80,10 +80,23 @@ class _InsertViewState extends State<InsertView> {
                          option3: option3Controller.text,
                          option4: option4Controller.text,
                        );
-                       await dbclass.create(model);
-                       ScaffoldMessenger.of(context).showSnackBar(
-                           SnackBar(content: Text("Data inserted successfully!"))
-                       );
+                     int check= await dbclass.create(model);
+                      if (check==1)
+                        {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Data inserted successfully!"))
+                          );
+                          questionController.clear();
+                          option1Controller.clear();
+                          option2Controller.clear();
+                          option3Controller.clear();
+                          option4Controller.clear();
+                        }
+                      else{
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Data Did not inserted"))
+                        );
+                      }
                      }
                    else
                      {
