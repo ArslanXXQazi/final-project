@@ -52,7 +52,9 @@ class _FetchViewState extends State<FetchView> {
           fontWeight: FontWeight.bold,
         ),
       ),
-     
+     body: ListView.builder(
+       
+     ),
     );
   }
 }
