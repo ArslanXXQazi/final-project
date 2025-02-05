@@ -74,4 +74,10 @@ class DbClass {
   }
 
 
+  fetchData()
+  {
+
+  }
+
+
 }

@@ -1,11 +1,26 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:flutter/material.dart';
 
 
-class FetchView extends StatelessWidget {
+class FetchView extends StatefulWidget {
   const FetchView({super.key});
 
   @override
+  State<FetchView> createState() => _FetchViewState();
+}
+
+class _FetchViewState extends State<FetchView> {
+  @override
+  DbClass dbClass= DbClass.instance;
+  List<Map<String,dynamic>> data=[
+    
+  ];
+  fetchData()
+  {
+
+  }
+
   Widget build(BuildContext context) {
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
