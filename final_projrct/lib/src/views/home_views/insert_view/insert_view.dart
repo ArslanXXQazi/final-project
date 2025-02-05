@@ -1,6 +1,8 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
+import 'package:final_projrct/src/dbhelper/dbhelper.dart';
+import 'package:final_projrct/src/model/main_model.dart';
 import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +17,7 @@ class InsertView extends StatefulWidget {
 class _InsertViewState extends State<InsertView> {
 
   TextEditingController questionController=TextEditingController();
-  TextEditingController firstOptionController=TextEditingController();
+  TextEditingController option1Controller=TextEditingController();
   TextEditingController secondOptionController=TextEditingController();
   TextEditingController thirdOptionController=TextEditingController();
   TextEditingController fourthOptionController=TextEditingController();
@@ -46,7 +48,7 @@ class _InsertViewState extends State<InsertView> {
                   labelText: "Enter your question",
               ),
               CustomTextFromField(
-                  controller: firstOptionController,
+                  controller: option1Controller,
                   hintText: "Enter your first option",
                   labelText: "Enter your first option",
               ),
@@ -66,9 +68,18 @@ class _InsertViewState extends State<InsertView> {
                   labelText: "Enter your fourth option",
               ),
               CustomButton(
-                  onTap: ()
+                  onTap: () async
                   {
-                    Navigator.push(context, CupertinoPageRoute(builder: (context)=>FetchView()));
+                    DbClass dbclass=DbClass.instance;
+
+                    MainModel model=MainModel(
+                        question: questionController.text,
+                        option1: option1Controller.text,
+                        option2: secondOptionController.text,
+                        option3: thirdOptionController.text,
+                        option4: fourthOptionController.text,
+                    );
+
                   },
                   name: "Insert Data")
 
