@@ -160,7 +160,7 @@ class _FetchViewState extends State<FetchView> {
         itemCount: data.length,
         itemBuilder: (context, index) {
           return Container(
-            height: height*.4,
+            height: height*.3,
             decoration: BoxDecoration(
               color: Colors.grey,
               borderRadius: BorderRadius.circular(10),
@@ -168,7 +168,7 @@ class _FetchViewState extends State<FetchView> {
             child: Column(
               children: [
                 Container(
-                    height: height *.05,
+
                     width: width * 1,
                     color: Colors.red,
                     child: Column(
@@ -180,25 +180,23 @@ class _FetchViewState extends State<FetchView> {
                 ),
                 SizedBox(height: height * .01),
                 Container(
-                  height: height * .05,
                   width: width * 1,
                   child: CustomText(text: data[index].option1 ?? ""),
                 ),
                 SizedBox(height: height * .01),
                 Container(
-                  height: height * .05,
+
                   width: width * 1,
                   child: CustomText(text: data[index].option2 ?? ""),
                 ),
                 SizedBox(height: height * .01),
                 Container(
-                  height: height * .05,
+
                   width: width * 1,
                   child: CustomText(text: data[index].option3 ?? ""),
                 ),
                 SizedBox(height: height * .01),
                 Container(
-                  height: height * .05,
                   width: width * 1,
                   child: CustomText(text: data[index].option4 ?? ""),
                 ),
