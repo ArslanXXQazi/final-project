@@ -51,7 +51,7 @@ class DbClass {
       'option4':model.option4,
     };
 
-    var check=db.insert('DbQuiz', data);
+    var check= await db.insert('questions', data);
     if(check==null)
       {
         print('Data Did not Insert');
@@ -69,15 +69,8 @@ class DbClass {
  Future<List<Map<String,dynamic>>> read()async
   {
     Database db=await instance.database;
-   List<Map<String,dynamic>> result = await db.query('DbQuiz');
+   List<Map<String,dynamic>> result = await db.query('questions');
    return result;
   }
-
-
-  fetchData()
-  {
-
-  }
-
 
 }
