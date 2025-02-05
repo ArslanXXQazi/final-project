@@ -159,48 +159,26 @@ class _FetchViewState extends State<FetchView> {
           : ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {
-          return Container(
-            height: height*.3,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                Container(
+          return Padding(
+            padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
+            child: Container(
+              height: height*.35,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: height * .01),
 
-                    width: width * 1,
-                    color: Colors.red,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(text: data[index].question ?? "")
-                      ],)
-                ),
-                SizedBox(height: height * .01),
-                Container(
-                  width: width * 1,
-                  child: CustomText(text: data[index].option1 ?? ""),
-                ),
-                SizedBox(height: height * .01),
-                Container(
+                  SizedBox(height: height * .01),
 
-                  width: width * 1,
-                  child: CustomText(text: data[index].option2 ?? ""),
-                ),
-                SizedBox(height: height * .01),
-                Container(
+                  SizedBox(height: height * .01),
 
-                  width: width * 1,
-                  child: CustomText(text: data[index].option3 ?? ""),
-                ),
-                SizedBox(height: height * .01),
-                Container(
-                  width: width * 1,
-                  child: CustomText(text: data[index].option4 ?? ""),
-                ),
-              ],
+                  SizedBox(height: height * .01),
+
+                ],
+              ),
             ),
           );
         },
