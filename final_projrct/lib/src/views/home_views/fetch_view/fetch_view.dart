@@ -13,22 +13,28 @@ class FetchView extends StatefulWidget {
 
 class _FetchViewState extends State<FetchView> {
   @override
-  DbClass dbClass= DbClass.instance;
-  List<Map<String,dynamic>> data=[
 
-  ];
-  fetchData() async
+  void initState()
   {
+    super.initState();
+    fetchData();
+  }
+
+  DbClass dbClass= DbClass.instance;
+
+  List <MainModel> data=[];
+
+  fetchData() async {
     var fetchedDataList = await dbClass.read();
-     data=fetchedDataList.map((noteMap){
-       return MainModel(
-           question: noteMap['question'],
-           option1: noteMap['option1'],
-           option2: noteMap['option2'],
-           option3: noteMap['option3'],
-           option4: noteMap['option4'],
-       )
-     }).toList();
+    data = fetchedDataList.map((noteMap) {
+      return MainModel(
+        question: noteMap['question'],
+        option1: noteMap['option1'],
+        option2: noteMap['option2'],
+        option3: noteMap['option3'],
+        option4: noteMap['option4'],
+      );
+    }).toList();
   }
 
   Widget build(BuildContext context) {

@@ -69,7 +69,7 @@ class DbClass {
  Future<List<Map<String,dynamic>>> read()async
   {
     Database db=await instance.database;
-   List<Map<String,dynamic>> result = await db.query('DbQuiz',orderBy: 'arslan');
+   List<Map<String,dynamic>> result = await db.query('DbQuiz');
    return result;
   }
 
