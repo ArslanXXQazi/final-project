@@ -155,7 +155,7 @@ class _FetchViewState extends State<FetchView> {
         ),
       ),
       body: data.isEmpty
-          ? Center(child: CircularProgressIndicator())  // Loading Indicator if no data
+          ? Center(child: CustomText(text: 'No Data Found '))  // Loading Indicator if no data
           : ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {
