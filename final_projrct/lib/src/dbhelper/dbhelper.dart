@@ -52,7 +52,7 @@ class DbClass {
     };
 
     var check= await db.insert('questions', data);
-    if(check==0)
+    if(check== null)
       {
         print('Data Did not Insert');
         return 0;
