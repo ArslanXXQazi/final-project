@@ -95,6 +95,7 @@
 // }
 
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_container.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
 import 'package:flutter/material.dart';
@@ -170,12 +171,15 @@ class _FetchViewState extends State<FetchView> {
               child: Column(
                 children: [
                   SizedBox(height: height * .01),
-
+                  CustomContainer(text: data[index].question??""),
                   SizedBox(height: height * .01),
-
+                  CustomContainer(text: data[index].option1??""),
                   SizedBox(height: height * .01),
-
+                  CustomContainer(text: data[index].option2??""),
                   SizedBox(height: height * .01),
+                  CustomContainer(text: data[index].option3??""),
+                  SizedBox(height: height * .01),
+                  CustomContainer(text: data[index].option4 ??""),
 
                 ],
               ),

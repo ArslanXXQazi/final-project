@@ -5,7 +5,7 @@ import 'custom_Text.dart';
 
 class CustomContainer extends StatelessWidget {
   String text;
-   CustomContainer({super.key,required this.text);
+   CustomContainer({super.key,required this.text});
 
   @override
   Widget build(BuildContext context) {
