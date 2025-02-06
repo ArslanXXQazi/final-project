@@ -9,7 +9,7 @@ class SplashView extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Colors.black,
+        color: Colors.white,
         child: Center(child: Image(image: AssetImage('assets/splash.png')),),
       ),
     );
