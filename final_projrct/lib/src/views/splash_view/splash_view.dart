@@ -1,3 +1,5 @@
+import 'package:final_projrct/src/views/auth_view/sign_up_view/sign_up_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -12,6 +14,9 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     // TODO: implement initState
     super.initState();
+   Future.delayed(Duration(seconds: 3),(){
+     Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignUpView()));
+   });
   }
   @override
   Widget build(BuildContext context) {
