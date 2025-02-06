@@ -7,10 +7,14 @@ class CustomContainer extends StatelessWidget {
   String text;
   Color color;
   Color fontcolor;
+  double fontSize;
+  FontWeight fontWeight;
    CustomContainer({super.key,
      required this.text,
      this.color=Colors.white,
      this.fontcolor=Colors.black,
+     this.fontSize=14,
+     this.fontWeight=FontWeight.normal,
    });
 
   @override
@@ -30,7 +34,7 @@ class CustomContainer extends StatelessWidget {
         children: [
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: width*.01),
-            child: CustomText(text:text,color: fontcolor,),
+            child: CustomText(text:text,color: fontcolor,fontSize:fontSize ,fontWeight: fontWeight,),
           ),
         ],
       ),

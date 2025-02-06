@@ -146,6 +146,7 @@ class _FetchViewState extends State<FetchView> {
     final width = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
@@ -166,10 +167,10 @@ class _FetchViewState extends State<FetchView> {
             padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
             child: GestureDetector(
               onTap: (){
-                dbClass.deleteData(data[index].id!);
-                setState(() {
-                  data.removeAt(index);
-                });
+                // dbClass.deleteData(data[index].id!);
+                // setState(() {
+                //   data.removeAt(index);
+                // });
               },
               child: Container(
                 height: height*.35,
@@ -180,7 +181,7 @@ class _FetchViewState extends State<FetchView> {
                 child: Column(
                   children: [
                     SizedBox(height: height * .01),
-                    CustomContainer(text:data[index].question??"",color: Colors.blue,fontcolor: Colors.white,),
+                    CustomContainer(text:data[index].question??"",color: Colors.blue,fontcolor: Colors.white,fontWeight: FontWeight.bold,fontSize: 17,),
                     SizedBox(height: height * .01),
                     CustomContainer(text: data[index].option1??""),
                     SizedBox(height: height * .01),
