@@ -34,9 +34,11 @@ class _SignUpViewState extends State<SignUpView> {
               lableText: 'Enter your Password',
               controller: passwordController
           ),
-          ElevatedButton(
-              onPressed: (){},
-              child: CustomText(text: 'Sign Up'),
+          Center(
+            child: ElevatedButton(
+                onPressed: (){},
+                child: CustomText(text: 'Sign Up'),
+            ),
           )
       ],),
     );
