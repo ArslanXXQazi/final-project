@@ -1,5 +1,6 @@
 import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
 import 'package:final_projrct/src/views/home_views/insert_view/insert_view.dart';
+import 'package:final_projrct/src/views/splash_view/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,8 +35,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:// FetchView()
-      InsertView(),
+      home: SplashView(),
+      // FetchView()
+      //InsertView(),
     );
   }
 }
