@@ -19,21 +19,7 @@ class _SignUpViewState extends State<SignUpView> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
         CustomText(text: 'Sign Up'),
-        TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.green),
-            ),
-            focusedBorder:  OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: Colors.blue),
-            ),
-            hintText: 'Enter Your Email',
-            labelText: 'Enter Your Email',
-          ),
-        )
+
       ],),
     );
   }
