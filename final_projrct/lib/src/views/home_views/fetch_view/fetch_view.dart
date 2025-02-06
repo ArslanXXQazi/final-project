@@ -180,7 +180,7 @@ class _FetchViewState extends State<FetchView> {
                 child: Column(
                   children: [
                     SizedBox(height: height * .01),
-                    CustomContainer(text:data[index].question??"",color: Colors.blue,),
+                    CustomContainer(text:data[index].question??"",color: Colors.blue,fontcolor: Colors.white,),
                     SizedBox(height: height * .01),
                     CustomContainer(text: data[index].option1??""),
                     SizedBox(height: height * .01),

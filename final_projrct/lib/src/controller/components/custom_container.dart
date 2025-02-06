@@ -6,9 +6,11 @@ import 'custom_Text.dart';
 class CustomContainer extends StatelessWidget {
   String text;
   Color color;
+  Color fontcolor;
    CustomContainer({super.key,
      required this.text,
      this.color=Colors.white,
+     this.fontcolor=Colors.black,
    });
 
   @override
@@ -26,7 +28,10 @@ class CustomContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(text:text ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: width*.01),
+            child: CustomText(text:text,color: fontcolor,),
+          ),
         ],
       ),
     );
