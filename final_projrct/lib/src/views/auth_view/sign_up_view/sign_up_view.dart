@@ -19,14 +19,15 @@ class _SignUpViewState extends State<SignUpView> {
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: width*.03),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          CustomText(text: 'Sign Up'),
-            SizedBox(height: height*.02,),
+          CustomText(text: 'Sign Up',fontWeight: FontWeight.bold,fontSize: 18,),
+            SizedBox(height: height*.01,),
             CustomTextFormField(
                 hintText: 'Enter your email',
                 lableText: 'Enter your email',
@@ -45,10 +46,20 @@ class _SignUpViewState extends State<SignUpView> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     minimumSize: Size(width*1, height*.07),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )
                   ),
-                  child: CustomText(text: 'Sign Up'),
+                  child: CustomText(text: 'Sign Up',color: Colors.white,fontWeight: FontWeight.bold,),
               ),
-            )
+            ),
+            SizedBox(height: height*.04,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              CustomText(text: "Already have account ?",fontSize: 13,),
+              TextButton(onPressed: (){}, child: CustomText(text: 'Sign in',color: Colors.blue,)),
+            ],)
         ],),
       ),
     );
