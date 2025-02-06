@@ -14,7 +14,10 @@ class _SignUpViewState extends State<SignUpView> {
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
-      body: Column(children: [
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
         CustomText(text: 'Sign Up'),
         TextFormField(
           decoration: InputDecoration(
