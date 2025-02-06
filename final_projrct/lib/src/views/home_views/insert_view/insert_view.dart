@@ -106,13 +106,8 @@ class _InsertViewState extends State<InsertView> {
                      }
 
                   },
-                  name: "Insert Data"),
-
-              CustomButton(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context)=>FetchView()));
-                  },
-                  name: "Fetch Data")
+                  name: "Insert Data",
+              ),
 
           ],),
         ),
