@@ -1,6 +1,9 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/controller/components/custom_text_form_field.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../sign_in_view/sign_in_view.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -42,7 +45,9 @@ class _SignUpViewState extends State<SignUpView> {
             SizedBox(height: height*.02,),
             Center(
               child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignInView()));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     minimumSize: Size(width*1, height*.07),
@@ -58,7 +63,10 @@ class _SignUpViewState extends State<SignUpView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
               CustomText(text: "Already have account ?",fontSize: 13,),
-              TextButton(onPressed: (){}, child: CustomText(text: 'Sign in',color: Colors.blue,)),
+              TextButton(onPressed: (){
+                Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignInView()));
+              },
+                  child: CustomText(text: 'Sign in',color: Colors.blue,)),
             ],)
         ],),
       ),

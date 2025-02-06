@@ -1,3 +1,4 @@
+import 'package:final_projrct/src/views/auth_view/sign_in_view/sign_in_view.dart';
 import 'package:final_projrct/src/views/auth_view/sign_up_view/sign_up_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
     // TODO: implement initState
     super.initState();
    Future.delayed(Duration(seconds: 3),(){
-     Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignUpView()));
+     Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignInView()));
    });
   }
   @override
