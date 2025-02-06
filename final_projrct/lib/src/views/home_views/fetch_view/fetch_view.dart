@@ -149,8 +149,9 @@ class _FetchViewState extends State<FetchView> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
+        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
         title: CustomText(
-          text: 'Fetched Data ',
+          text: 'Questions ',
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -173,26 +174,23 @@ class _FetchViewState extends State<FetchView> {
               child: Container(
                 height: height*.35,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: width*.02),
-                  child: Column(
-                    children: [
-                      SizedBox(height: height * .01),
-                      CustomContainer(text:data[index].question??""),
-                      SizedBox(height: height * .01),
-                      CustomContainer(text: data[index].option1??""),
-                      SizedBox(height: height * .01),
-                      CustomContainer(text: data[index].option2??""),
-                      SizedBox(height: height * .01),
-                      CustomContainer(text: data[index].option3??""),
-                      SizedBox(height: height * .01),
-                      CustomContainer(text: data[index].option4 ??""),
+                child: Column(
+                  children: [
+                    SizedBox(height: height * .01),
+                    CustomContainer(text:data[index].question??"",color: Colors.blue,),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option1??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option2??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option3??""),
+                    SizedBox(height: height * .01),
+                    CustomContainer(text: data[index].option4 ??""),
 
-                    ],
-                  ),
+                  ],
                 ),
               ),
             ),

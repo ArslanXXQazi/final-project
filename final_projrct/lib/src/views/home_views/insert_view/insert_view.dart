@@ -3,7 +3,6 @@ import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
-import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,8 +28,9 @@ class _InsertViewState extends State<InsertView> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
+        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
         title: CustomText(
-          text: 'Insert Data ',
+          text: 'Insert Your Questions',
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.bold,

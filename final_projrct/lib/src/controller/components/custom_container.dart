@@ -5,7 +5,11 @@ import 'custom_Text.dart';
 
 class CustomContainer extends StatelessWidget {
   String text;
-   CustomContainer({super.key,required this.text});
+  Color color;
+   CustomContainer({super.key,
+     required this.text,
+     this.color=Colors.white,
+   });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,17 @@ class CustomContainer extends StatelessWidget {
     return  Container(
       height: height*.06,
       width: width * 1,
-      child: CustomText(text:text ),
+     decoration: BoxDecoration(
+       color: color,
+       borderRadius: BorderRadius.circular(10),
+     ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomText(text:text ),
+        ],
+      ),
     );
   }
 }
