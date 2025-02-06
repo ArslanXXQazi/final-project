@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
     final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
       body: Column(children: [
-        
+
       ],),
     );
   }

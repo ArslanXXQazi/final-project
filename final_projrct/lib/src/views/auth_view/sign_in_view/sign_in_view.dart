@@ -1,6 +1,8 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_form_field.dart';
 import 'package:final_projrct/src/views/auth_view/sign_up_view/sign_up_view.dart';
+import 'package:final_projrct/src/views/home_views/home_view/home_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -43,17 +45,20 @@ class _SignUpViewState extends State<SignInView> {
             ),
             SizedBox(height: height*.02,),
             Center(
-              child: ElevatedButton(
-                onPressed: (){},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    minimumSize: Size(width*1, height*.07),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    )
-                ),
-                child: CustomText(text: 'Log in',color: Colors.white,fontWeight: FontWeight.bold,),
-              ),
+              child: CustomButton(
+                  onTap: (){
+                    if(emailController.text=='arslan@gmail.com'&& passwordController.text=='123456')
+                      {
+                        Navigator.push(context, CupertinoPageRoute(builder: (context)=>HomeView()));
+                      }
+                    else
+                      {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Email or Password is Incorrect"))
+                        );
+                      }
+                  },
+                  name:'Log in' )
             ),
             SizedBox(height: height*.04,),
             Row(
