@@ -163,16 +163,19 @@ class _FetchViewState extends State<FetchView> {
           : ListView.builder(
         itemCount: data.length,
         itemBuilder: (context, index) {
-           return  Container(
-             height: height*.1,
-             width: width*1,
-             color: Colors.red,
-             child: Column(children: [
-               Row(children: [
-                 CustomText(text: 'Question No '),
-                 CustomText(text: '1'),
-               ],)
-             ],),
+           return  Padding(
+             padding: const EdgeInsets.symmetric(vertical: 20),
+             child: Container(
+               height: height*.1,
+               width: width*1,
+               color: Colors.red,
+               child: Column(children: [
+                 Row(children: [
+                   CustomText(text: 'Question No '),
+                   CustomText(text: '1'),
+                 ],)
+               ],),
+             ),
            );
              //Padding(
           //   padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
