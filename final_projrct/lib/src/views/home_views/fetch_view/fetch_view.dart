@@ -96,6 +96,7 @@
 
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/controller/components/custom_container.dart';
+import 'package:final_projrct/src/controller/components/select_container.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
 import 'package:flutter/material.dart';
@@ -176,7 +177,7 @@ class _FetchViewState extends State<FetchView> {
                  ],),
                  CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,),
                  Row(children: [
-                  
+                  SelectContainer(onTap: (){}, text: "A"),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
