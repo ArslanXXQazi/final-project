@@ -167,7 +167,9 @@ class _FetchViewState extends State<FetchView> {
              height: height*.1,
              width: width*1,
              color: Colors.red,
-             child: Column(),
+             child: Column(children: [
+               
+             ],),
            );
              //Padding(
           //   padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
