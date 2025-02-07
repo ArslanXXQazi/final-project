@@ -179,7 +179,11 @@ class _FetchViewState extends State<FetchView> {
                    Container(
                      height: height*.04,
                      width: width*.08,
-                     color: Colors.yellow,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      
+                    ),
+
                    ),
                  ],)
                ],),
