@@ -182,7 +182,8 @@ class _FetchViewState extends State<FetchView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(children: [
-                      
+                      CustomText(text: 'Question no '),
+                      CustomText(text: '1'),
                     ],),
 
                     SizedBox(height: height * .01),
