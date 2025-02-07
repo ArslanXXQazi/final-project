@@ -170,6 +170,7 @@ class _FetchViewState extends State<FetchView> {
              child: Column(children: [
                Row(children: [
                  CustomText(text: 'Question No '),
+                 CustomText(text: '1'),
                ],)
              ],),
            );
