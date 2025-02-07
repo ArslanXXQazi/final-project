@@ -167,15 +167,18 @@ class _FetchViewState extends State<FetchView> {
            return  Padding(
              padding: const EdgeInsets.symmetric(vertical: 20),
              child: Container(
-               height: height*.3,
+               height: height*.35,
                width: width*1,
-               color: Colors.red,
-               child: Column(children: [
+               color: Colors.white,
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
                  Row(children: [
                    CustomText(text: 'Question No '),
                    CustomText(text: '1'),
                  ],),
-                 CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,),
+                 SizedBox(height: height*.02,),
+                 CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
                  Row(children: [
                   SelectContainer(onTap: (){}, text: "A"),
                    SizedBox(width: 20,),
@@ -195,16 +198,7 @@ class _FetchViewState extends State<FetchView> {
                  ],),
                  SizedBox(height: 10,),
                  Row(children: [
-                   Container(
-                     height: height*.04,
-                     width: width*.08,
-                     decoration: BoxDecoration(
-                       color: Colors.yellow,
-                       borderRadius: BorderRadius.circular(10),
-                     ),
-                     child: Center(child: CustomText(text: 'A')),
-
-                   ),
+                   SelectContainer(onTap: (){}, text: "D"),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
