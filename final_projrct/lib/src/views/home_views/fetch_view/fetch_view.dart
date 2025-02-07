@@ -165,45 +165,49 @@ class _FetchViewState extends State<FetchView> {
         itemCount: data.length,
         itemBuilder: (context, index) {
            return  Padding(
-             padding: const EdgeInsets.symmetric(vertical: 20),
+             padding: EdgeInsets.symmetric(horizontal: width*.03,vertical: height*.02),
              child: Container(
                height: height*.35,
                width: width*1,
-               color: Colors.white,
-               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                 Row(children: [
-                   CustomText(text: 'Question No '),
-                   CustomText(text: '1'),
-                 ],),
-                 SizedBox(height: height*.01,),
-                 CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
-                   SizedBox(height: height*.02,),
-                 Row(children: [
-                  SelectContainer(onTap: (){}, text: "A"),
-                   SizedBox(width: 20,),
-                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
-                 ],),
+              
+               child: Padding(
+                 padding:  EdgeInsets.symmetric(horizontal: width*.02),
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                   Row(children: [
+                     CustomText(text: 'Question No ',color: Colors.blue,fontWeight: FontWeight.bold,),
+                     CustomText(text: '1'),
+                   ],),
                    SizedBox(height: height*.01,),
-                 Row(children: [
-                   SelectContainer(onTap: (){}, text: "B"),
-                   SizedBox(width: 20,),
-                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
+                   CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
+                     SizedBox(height: height*.02,),
+                   Row(children: [
+                    SelectContainer(onTap: (){}, text: "A"),
+                     SizedBox(width: 20,),
+                     Expanded(child: CustomText(text: data[index].option1??""))
+                   ],),
+                     SizedBox(height: height*.01,),
+                   Row(children: [
+                     SelectContainer(onTap: (){}, text: "B"),
+                     SizedBox(width: 20,),
+                     Expanded(child: CustomText(text: data[index].option2??""))
+                   ],),
+                     SizedBox(height: height*.01,),
+                   Row(children: [
+                     SelectContainer(onTap: (){}, text: "C"),
+                     SizedBox(width: 20,),
+                     Expanded(child: CustomText(text: data[index].option3??""))
+                   ],),
+                     SizedBox(height: height*.01,),
+                   Row(children: [
+                     SelectContainer(onTap: (){}, text: "D"),
+                     SizedBox(width: 20,),
+                     Expanded(child: CustomText(text: data[index].option4??""))
+                   ],),
                  ],),
-                   SizedBox(height: height*.01,),
-                 Row(children: [
-                   SelectContainer(onTap: (){}, text: "C"),
-                   SizedBox(width: 20,),
-                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
-                 ],),
-                   SizedBox(height: height*.01,),
-                 Row(children: [
-                   SelectContainer(onTap: (){}, text: "D"),
-                   SizedBox(width: 20,),
-                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
-                 ],),
-               ],),
+               ),
              ),
            );
              //Padding(
