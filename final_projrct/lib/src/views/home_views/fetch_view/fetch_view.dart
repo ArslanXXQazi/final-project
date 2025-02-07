@@ -177,7 +177,9 @@ class _FetchViewState extends State<FetchView> {
                  CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,),
                  Row(children: [
                    Container(
-
+                     height: height*.05,
+                     width: width*.2,
+                     color: Colors.yellow,
                    ),
                  ],)
                ],),
