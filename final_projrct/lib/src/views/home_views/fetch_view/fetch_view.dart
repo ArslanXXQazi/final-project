@@ -169,7 +169,7 @@ class _FetchViewState extends State<FetchView> {
              color: Colors.red,
              child: Column(children: [
                Row(children: [
-                 
+                 CustomText(text: 'Question No '),
                ],)
              ],),
            );
