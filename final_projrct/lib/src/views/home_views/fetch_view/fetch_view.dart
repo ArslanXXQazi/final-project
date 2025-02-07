@@ -181,7 +181,7 @@ class _FetchViewState extends State<FetchView> {
                      width: width*.08,
                     decoration: BoxDecoration(
                       color: Colors.yellow,
-                      
+                      borderRadius: BorderRadius.circular(10),
                     ),
 
                    ),
