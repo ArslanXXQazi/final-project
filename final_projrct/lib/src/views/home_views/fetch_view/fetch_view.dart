@@ -183,7 +183,7 @@ class _FetchViewState extends State<FetchView> {
                   children: [
                     Row(children: [
                       CircleAvatar(
-                        
+                        backgroundColor: Colors.red,
                       )
                     ],),
                     SizedBox(height: height * .01),
