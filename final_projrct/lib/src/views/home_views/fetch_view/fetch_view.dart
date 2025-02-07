@@ -177,26 +177,27 @@ class _FetchViewState extends State<FetchView> {
                    CustomText(text: 'Question No '),
                    CustomText(text: '1'),
                  ],),
-                 SizedBox(height: height*.02,),
+                 SizedBox(height: height*.01,),
                  CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
+                   SizedBox(height: height*.02,),
                  Row(children: [
                   SelectContainer(onTap: (){}, text: "A"),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
-                 SizedBox(height: 10,),
+                   SizedBox(height: height*.01,),
                  Row(children: [
                    SelectContainer(onTap: (){}, text: "B"),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
-                 SizedBox(height: 10,),
+                   SizedBox(height: height*.01,),
                  Row(children: [
                    SelectContainer(onTap: (){}, text: "C"),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
-                 SizedBox(height: 10,),
+                   SizedBox(height: height*.01,),
                  Row(children: [
                    SelectContainer(onTap: (){}, text: "D"),
                    SizedBox(width: 20,),
