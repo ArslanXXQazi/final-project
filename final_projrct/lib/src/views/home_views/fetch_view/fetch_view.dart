@@ -182,7 +182,9 @@ class _FetchViewState extends State<FetchView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(children: [
-
+                      CircleAvatar(
+                        
+                      )
                     ],),
                     SizedBox(height: height * .01),
                     CustomContainer(text:data[index].question??"",color: Colors.blue,fontcolor: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,),
