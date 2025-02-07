@@ -185,6 +185,8 @@ class _FetchViewState extends State<FetchView> {
                       CircleAvatar(
                         backgroundColor: Colors.red,
                         radius: width*.04,
+                        child: CustomText(text: "1"),
+                        
                       )
                     ],),
                     SizedBox(height: height * .01),
