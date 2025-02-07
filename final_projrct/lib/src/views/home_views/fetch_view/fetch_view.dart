@@ -188,7 +188,50 @@ class _FetchViewState extends State<FetchView> {
                    ),
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
-                 ],)
+                 ],),
+                 SizedBox(height: 10,),
+                 Row(children: [
+                   Container(
+                     height: height*.04,
+                     width: width*.08,
+                     decoration: BoxDecoration(
+                       color: Colors.yellow,
+                       borderRadius: BorderRadius.circular(10),
+                     ),
+                     child: Center(child: CustomText(text: 'A')),
+
+                   ),
+                   SizedBox(width: 20,),
+                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
+                 ],),
+                 Row(children: [
+                   Container(
+                     height: height*.04,
+                     width: width*.08,
+                     decoration: BoxDecoration(
+                       color: Colors.yellow,
+                       borderRadius: BorderRadius.circular(10),
+                     ),
+                     child: Center(child: CustomText(text: 'A')),
+
+                   ),
+                   SizedBox(width: 20,),
+                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
+                 ],),
+                 Row(children: [
+                   Container(
+                     height: height*.04,
+                     width: width*.08,
+                     decoration: BoxDecoration(
+                       color: Colors.yellow,
+                       borderRadius: BorderRadius.circular(10),
+                     ),
+                     child: Center(child: CustomText(text: 'A')),
+
+                   ),
+                   SizedBox(width: 20,),
+                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
+                 ],),
                ],),
              ),
            );
