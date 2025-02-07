@@ -16,7 +16,7 @@ class SelectContainer extends StatelessWidget {
         height: height*.04,
         width: width*.08,
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Colors.grey.shade200,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(child: CustomText(text: text)),
