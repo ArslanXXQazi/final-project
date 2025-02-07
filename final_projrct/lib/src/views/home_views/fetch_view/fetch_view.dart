@@ -176,16 +176,7 @@ class _FetchViewState extends State<FetchView> {
                  ],),
                  CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,),
                  Row(children: [
-                   Container(
-                     height: height*.04,
-                     width: width*.08,
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                     child: Center(child: CustomText(text: 'A')),
-
-                   ),
+                  
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
