@@ -219,6 +219,7 @@ class _FetchViewState extends State<FetchView> {
                    SizedBox(width: 20,),
                    Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],),
+                 SizedBox(height: 10,),
                  Row(children: [
                    Container(
                      height: height*.04,
