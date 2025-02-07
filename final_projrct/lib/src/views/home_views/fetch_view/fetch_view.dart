@@ -183,9 +183,10 @@ class _FetchViewState extends State<FetchView> {
                       color: Colors.yellow,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                     child: CustomText(text: 'A'),
+                     child: Center(child: CustomText(text: 'A')),
+
                    ),
-                   CustomText(text: '')
+                   CustomText(text: 'c jkc acasnmc caks jcaca cccajksc ccacca  alca c  cajlc a cajsc c ac a')
                  ],)
                ],),
              ),
