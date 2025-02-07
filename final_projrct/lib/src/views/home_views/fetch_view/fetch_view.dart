@@ -164,8 +164,9 @@ class _FetchViewState extends State<FetchView> {
         itemCount: data.length,
         itemBuilder: (context, index) {
            return  Container(
-             height: height*.5,
-             
+             height: height*.3,
+             width: width*1,
+
            );
              //Padding(
           //   padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
