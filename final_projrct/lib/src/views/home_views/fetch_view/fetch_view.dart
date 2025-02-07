@@ -174,7 +174,10 @@ class _FetchViewState extends State<FetchView> {
                    CustomText(text: 'Question No '),
                    CustomText(text: '1'),
                  ],),
-                 CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,)
+                 CustomText(text: 'jcakjc  ascnjlascas an caclak cacajsc acaca aajc akcj ack acackj c',fontWeight: FontWeight.bold,fontSize: 18,),
+                 Row(children: [
+                   
+                 ],)
                ],),
              ),
            );
