@@ -186,7 +186,8 @@ class _FetchViewState extends State<FetchView> {
                      child: Center(child: CustomText(text: 'A')),
 
                    ),
-                   CustomText(text: 'c jkc acasnmc caks jcaca cccajksc ccacca  alca c  cajlc a cajsc c ac a')
+                   SizedBox(width: 20,),
+                   Expanded(child: CustomText(text: 'cajlc a cajsc c ac a'))
                  ],)
                ],),
              ),
