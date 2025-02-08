@@ -99,6 +99,8 @@ import 'package:final_projrct/src/controller/components/custom_container.dart';
 import 'package:final_projrct/src/controller/components/select_container.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
+import 'package:final_projrct/src/views/home_views/update_data/update_data.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FetchView extends StatefulWidget {
@@ -167,11 +169,29 @@ class _FetchViewState extends State<FetchView> {
            return  Padding(
              padding: EdgeInsets.symmetric(horizontal: width*.03,vertical: height*.02),
              child: GestureDetector(
-               onLongPress: (){
-                  dbClass.deleteData(data[index].id!);
-                        setState(() {
-                         data.removeAt(index);
-                 });
+               onLongPress: () async{
+                 //  dbClass.deleteData(data[index].id!);
+                 //        setState(() {
+                 //         data.removeAt(index);
+                 // });
+
+
+               bool  result = await Navigator.push(context, CupertinoPageRoute(builder: (context)=>UpdateData(
+                     id: data[index].id!,
+                     question: data[index].question??"",
+                     option1: data[index].option1??"",
+                     option2: data[index].option2??"",
+                     option3: data[index].option3??"",
+                     option4: data[index].option4??""
+                 )));
+                 if(result=true)
+                   {
+                     fetchData();
+                   }
+
+
+
+
                },
                child: Container(
                  height: height*.35,

@@ -38,6 +38,18 @@ class _UpdateDataState extends State<UpdateData> {
 
   TextEditingController option4Controller=TextEditingController();
 
+
+  void initState(){
+
+    super.initState();
+    questionController.text=widget.question;
+    option1Controller.text=widget.option1;
+    option2Controller.text=widget.option2;
+    option3Controller.text=widget.option3;
+    option4Controller.text=widget.option4;
+
+  }
+
   @override
   Widget build(BuildContext context) {
     final height=MediaQuery.sizeOf(context).height;
