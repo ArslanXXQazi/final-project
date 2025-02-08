@@ -7,11 +7,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UpdateData extends StatefulWidget {
-
+  int id;
   String question;
-  String question;
+  String option1;
+  String option2;
+  String option3;
+  String option4;
 
- UpdateData({super.key});
+ UpdateData({super.key,
+   required this.id,
+   required this.question,
+   required this.option1,
+   required this.option2,
+   required this.option3,
+   required this.option4,
+ });
 
   @override
   State<UpdateData> createState() => _UpdateDataState();
