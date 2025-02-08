@@ -237,47 +237,6 @@ class _FetchViewState extends State<FetchView> {
                ),
              ),
            );
-             //Padding(
-          //   padding:  EdgeInsets.symmetric(horizontal: width*.02,vertical: height*.01),
-          //   child: GestureDetector(
-          //     onTap: (){
-          //       // dbClass.deleteData(data[index].id!);
-          //       // setState(() {
-          //       //   data.removeAt(index);
-          //       // });
-          //     },
-          //     child: Container(
-          //
-          //       decoration: BoxDecoration(
-          //         color: Colors.white,
-          //         borderRadius: BorderRadius.circular(10),
-          //       ),
-          //       child: Column(
-          //         mainAxisAlignment: MainAxisAlignment.center,
-          //         children: [
-          //           Row(children: [
-          //             CustomText(text: 'Question no '),
-          //             CustomText(text: '1'),
-          //           ],),
-          //
-          //           SizedBox(height: height * .01),
-          //           CustomContainer(text:data[index].question??"",color: Colors.blue,fontcolor: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,),
-          //           SizedBox(height: height * .02),
-          //           CustomContainer(text: data[index].option1??""),
-          //           SizedBox(height: height * .02),
-          //           CustomContainer(text: data[index].option2??""),
-          //           SizedBox(height: height * .02),
-          //           CustomContainer(text: data[index].option3??""),
-          //           SizedBox(height: height * .02),
-          //           CustomContainer(text: data[index].option4 ??""),
-          //           SizedBox(height: height * .01),
-          //
-          //
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // );
         },
       ),
     );

@@ -59,11 +59,12 @@ await dbClass.updateData(
     model:MainModel(
         question: questionController.text,
         option1: option1Controller.text,
-        option2: option2,
-        option3: option3,
-        option4: option4
+        option2: option2Controller.text,
+        option3: option3Controller.text,
+        option4: option4Controller.text,
     ));
-
+  setState(() {});
+  Navigator.pop(context);
   }
 DbClass dbClass= DbClass.instance;
 
@@ -116,7 +117,9 @@ DbClass dbClass= DbClass.instance;
               ),
               CustomButton(
                 onTap: ()
-               {},
+               {
+                 updateData();
+               },
                 name: "Update Data",
               ),
 
