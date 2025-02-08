@@ -50,6 +50,23 @@ class _UpdateDataState extends State<UpdateData> {
 
   }
 
+
+  updateData() async
+  {
+
+await dbClass.updateData(
+    id: widget.id,
+    model:MainModel(
+        question: questionController.text,
+        option1: option1Controller.text,
+        option2: option2,
+        option3: option3,
+        option4: option4
+    ));
+
+  }
+DbClass dbClass= DbClass.instance;
+
   @override
   Widget build(BuildContext context) {
     final height=MediaQuery.sizeOf(context).height;

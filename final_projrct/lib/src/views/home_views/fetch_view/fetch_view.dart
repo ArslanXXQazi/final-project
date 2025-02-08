@@ -184,14 +184,10 @@ class _FetchViewState extends State<FetchView> {
                      option3: data[index].option3??"",
                      option4: data[index].option4??""
                  )));
-                 if(result=true)
+                 if(result==true)
                    {
                      fetchData();
                    }
-
-
-
-
                },
                child: Container(
                  height: height*.35,
