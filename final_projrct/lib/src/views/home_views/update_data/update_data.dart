@@ -28,19 +28,15 @@ class UpdateData extends StatefulWidget {
 }
 
 class _UpdateDataState extends State<UpdateData> {
+
   TextEditingController questionController=TextEditingController();
-
   TextEditingController option1Controller=TextEditingController();
-
   TextEditingController option2Controller=TextEditingController();
-
   TextEditingController option3Controller=TextEditingController();
-
   TextEditingController option4Controller=TextEditingController();
 
 
   void initState(){
-
     super.initState();
     questionController.text=widget.question;
     option1Controller.text=widget.option1;

@@ -95,6 +95,7 @@
 // }
 
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_container.dart';
 import 'package:final_projrct/src/controller/components/select_container.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
@@ -176,18 +177,48 @@ class _FetchViewState extends State<FetchView> {
                  // });
 
 
-               bool  result = await Navigator.push(context, CupertinoPageRoute(builder: (context)=>UpdateData(
-                     id: data[index].id!,
-                     question: data[index].question??"",
-                     option1: data[index].option1??"",
-                     option2: data[index].option2??"",
-                     option3: data[index].option3??"",
-                     option4: data[index].option4??""
-                 )));
-                 if(result==true)
-                   {
-                     fetchData();
-                   }
+                 showDialog(context: context,
+                     builder: (BuildContext context){
+                    return AlertDialog(
+                      title: CustomText(text: 'Are you sure to want these changes'),
+                      actions: [
+                        Row(children: [
+                          Expanded(child: CustomButton(
+                            onTap: () async
+                            {
+                              bool  result = await Navigator.push(context, CupertinoPageRoute(builder: (context)=>UpdateData(
+                                    id: data[index].id!,
+                                    question: data[index].question??"",
+                                    option1: data[index].option1??"",
+                                    option2: data[index].option2??"",
+                                    option3: data[index].option3??"",
+                                    option4: data[index].option4??"",
+                                )));
+                                if(result==true)
+                                  {
+                                    fetchData();
+                                  }
+                                Navigator.pop(context);
+                            },
+                            name: 'Update',
+                          )),
+                          SizedBox(width: width*.02,),
+                          Expanded(child: CustomButton(
+                            onTap: () async
+                            {
+                              await dbClass.deleteData(data[index].id!);
+                                     setState(() {
+                                      data.removeAt(index);
+                              });
+                                     Navigator.pop(context);
+                            },
+                            name: 'Delete',color: Colors.red,
+                          )),
+                        ],)
+                      ],
+                    );
+                     }
+                 );
                },
                child: Container(
                  height: height*.35,
