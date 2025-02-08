@@ -63,8 +63,7 @@ await dbClass.updateData(
         option3: option3Controller.text,
         option4: option4Controller.text,
     ));
-  setState(() {});
-  Navigator.pop(context);
+  Navigator.pop(context,true);
   }
 DbClass dbClass= DbClass.instance;
 
