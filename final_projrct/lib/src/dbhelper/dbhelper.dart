@@ -78,4 +78,31 @@ class DbClass {
     return await db.delete('questions',where: 'id=?',whereArgs: [id]);
   }
 
+  Future<int> updateData({required int id, required MainModel model}) async {
+    Database db = await instance.database;
+    final data = {
+      'question': model.question,
+      'option1': model.option1,
+      'option2': model.option2,
+      'option3': model.option3,
+      'option4': model.option4,
+    };
+
+    int result = await db.update(
+      'questions',
+      data,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+
+    if (result > 0) {
+      print('Data Updated Successfully');
+    } else {
+      print('Data Update Failed');
+    }
+
+    return result;
+  }
+
+
 }
