@@ -170,13 +170,7 @@ class _FetchViewState extends State<FetchView> {
            return  Padding(
              padding: EdgeInsets.symmetric(horizontal: width*.03,vertical: height*.02),
              child: GestureDetector(
-               onLongPress: () async{
-                 //  dbClass.deleteData(data[index].id!);
-                 //        setState(() {
-                 //         data.removeAt(index);
-                 // });
-
-
+               onLongPress: () {
                  showDialog(context: context,
                      builder: (BuildContext context){
                     return AlertDialog(
@@ -235,7 +229,7 @@ class _FetchViewState extends State<FetchView> {
                      children: [
                      Row(children: [
                        CustomText(text: 'Question No ',color: Colors.blue,fontWeight: FontWeight.bold,),
-                       CustomText(text: '1'),
+                       CustomText(text: data[index].id.toString()),
                      ],),
                      SizedBox(height: height*.01,),
                      CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
