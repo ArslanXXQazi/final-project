@@ -60,7 +60,7 @@ class InsertView extends StatelessWidget {
                   labelText: "Enter your fourth option",
               ),
              Obx((){
-               return insertController.isLoading.value?CircularProgressIndicator():
+               return insertController.isLoading.value?Center(child: CircularProgressIndicator()):
                CustomButton(
                  onTap: (){
                    insertController.insertData();

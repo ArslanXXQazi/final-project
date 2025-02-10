@@ -35,7 +35,7 @@ class InsertController extends GetxController {
 
       if (check == 1) {
         Get.snackbar("Success", "Data inserted successfully!",
-            snackPosition: SnackPosition.BOTTOM,
+            snackPosition: SnackPosition.TOP,
             backgroundColor: Colors.green,
             colorText: Colors.white);
 
