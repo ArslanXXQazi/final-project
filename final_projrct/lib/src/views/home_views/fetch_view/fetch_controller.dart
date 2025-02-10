@@ -44,8 +44,7 @@ class FetchController extends GetxController{
   void deleteData(int id) async {
     await dbClass.deleteData(id);
     dataList.removeWhere((element) => element.id == id);
-    Get.snackbar("Deleted", "Data deleted successfully!",
-        snackPosition: SnackPosition.TOP, backgroundColor: Get.theme.primaryColor);
+
   }
 
 }

@@ -9,6 +9,9 @@ import 'package:final_projrct/src/model/main_model.dart';
 import 'package:final_projrct/src/views/home_views/update_data/update_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 class FetchView extends StatefulWidget {
   const FetchView({super.key});
@@ -106,11 +109,13 @@ class _FetchViewState extends State<FetchView> {
                           Expanded(child: CustomButton(
                             onTap: () async
                             {
+                              Navigator.pop(context);
                               await dbClass.deleteData(data[index].id!);
                                      setState(() {
                                       data.removeAt(index);
                               });
-                                     Navigator.pop(context);
+                              Get.snackbar("Deleted", "Data deleted successfully!",
+                                  snackPosition: SnackPosition.TOP, backgroundColor: Get.theme.primaryColor);
                             },
                             name: 'Delete',color: Colors.red,
                           )),

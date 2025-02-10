@@ -5,6 +5,9 @@ import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
 class UpdateData extends StatefulWidget {
   int id;
@@ -114,6 +117,10 @@ DbClass dbClass= DbClass.instance;
                 onTap: ()
                {
                  updateData();
+                 Get.snackbar("Updated", "Data Updated",
+                     snackPosition: SnackPosition.TOP,
+                     backgroundColor: Colors.green,
+                     colorText: Colors.white);
                },
                 name: "Update Data",
               ),
