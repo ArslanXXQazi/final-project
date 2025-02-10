@@ -77,8 +77,8 @@ class DbClass {
     Database db=await instance.database;
     return await db.delete('questions',where: 'id=?',whereArgs: [id]);
   }
-//required int id
-  Future<int> updateData({required MainModel model}) async {
+//
+  Future<int> updateData({required int id,required MainModel model}) async {
     Database db = await instance.database;
     final data = {
       'question': model.question,
@@ -92,7 +92,7 @@ class DbClass {
       'questions',
       data,
       where: 'id = ?',
-     // whereArgs: [id],
+      whereArgs: [id],
     );
 
     if (result > 0) {

@@ -88,7 +88,7 @@ class _FetchViewState extends State<FetchView> {
                             {
                               Navigator.pop(context);
                               bool  result = await Navigator.push(context, CupertinoPageRoute(builder: (context)=>UpdateData(
-                                    //id: data[index].id!,
+                                    id: data[index].id!,
                                     question: data[index].question??"",
                                     option1: data[index].option1??"",
                                     option2: data[index].option2??"",

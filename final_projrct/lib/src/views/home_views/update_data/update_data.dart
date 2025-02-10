@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UpdateData extends StatefulWidget {
-  //int id;
+  int id;
   String question;
   String option1;
   String option2;
@@ -15,7 +15,7 @@ class UpdateData extends StatefulWidget {
   String option4;
 
  UpdateData({super.key,
-  // required this.id,
+   required this.id,
    required this.question,
    required this.option1,
    required this.option2,
@@ -51,7 +51,7 @@ class _UpdateDataState extends State<UpdateData> {
   {
 
 await dbClass.updateData(
-   // id: widget.id,
+    id: widget.id,
     model:MainModel(
         question: questionController.text,
         option1: option1Controller.text,
