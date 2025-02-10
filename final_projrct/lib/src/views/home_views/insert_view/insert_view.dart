@@ -3,6 +3,7 @@ import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
+import 'package:final_projrct/src/views/home_views/fetch_view/fetch_controller.dart';
 import 'package:final_projrct/src/views/home_views/insert_view/insert_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class InsertView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     InsertController insertController=Get.put(InsertController());
+    FetchController fetchController=Get.put(FetchController());
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -64,6 +66,7 @@ class InsertView extends StatelessWidget {
                CustomButton(
                  onTap: (){
                    insertController.insertData();
+                   fetchController.fetchData();
                  },name: "Insert Data",
                );
              })
