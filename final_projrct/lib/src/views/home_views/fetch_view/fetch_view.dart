@@ -86,8 +86,9 @@ class _FetchViewState extends State<FetchView> {
                           Expanded(child: CustomButton(
                             onTap: () async
                             {
+                              Navigator.pop(context);
                               bool  result = await Navigator.push(context, CupertinoPageRoute(builder: (context)=>UpdateData(
-                                    id: data[index].id!,
+                                    //id: data[index].id!,
                                     question: data[index].question??"",
                                     option1: data[index].option1??"",
                                     option2: data[index].option2??"",
@@ -98,7 +99,6 @@ class _FetchViewState extends State<FetchView> {
                                   {
                                     fetchData();
                                   }
-                                Navigator.pop(context);
                             },
                             name: 'Update',
                           )),
@@ -135,7 +135,7 @@ class _FetchViewState extends State<FetchView> {
                      children: [
                      Row(children: [
                        CustomText(text: 'Question No ',color: Colors.blue,fontWeight: FontWeight.bold,),
-                       CustomText(text: data[index].id.toString()),
+                       CustomText(text: data[index].),
                      ],),
                      SizedBox(height: height*.01,),
                      CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
