@@ -22,7 +22,6 @@ class CustomContainer extends StatelessWidget {
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
     return  Container(
-
       width: width * 1,
      decoration: BoxDecoration(
        color: color,

@@ -3,25 +3,17 @@ import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
+import 'package:final_projrct/src/views/home_views/insert_view/insert_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class InsertView extends StatefulWidget {
+class InsertView extends StatelessWidget {
   const InsertView({super.key});
-
-  @override
-  State<InsertView> createState() => _InsertViewState();
-}
-
-class _InsertViewState extends State<InsertView> {
-
-  TextEditingController questionController=TextEditingController();
-  TextEditingController option1Controller=TextEditingController();
-  TextEditingController option2Controller=TextEditingController();
-  TextEditingController option3Controller=TextEditingController();
-  TextEditingController option4Controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
+    InsertController insertController=Get.put(InsertController());
     final height=MediaQuery.sizeOf(context).height;
     final width=MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -43,72 +35,38 @@ class _InsertViewState extends State<InsertView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomTextFromField(
-                  controller: questionController,
+                  controller:insertController.questionController,
                   hintText: "Enter your question",
                   labelText: "Enter your question",
               ),
               CustomTextFromField(
-                  controller: option1Controller,
+                  controller: insertController.option1Controller,
                   hintText: "Enter your first option",
                   labelText: "Enter your first option",
               ),
               CustomTextFromField(
-                  controller: option2Controller,
+                  controller: insertController.option2Controller,
                   hintText: "Enter your second option",
                   labelText: "Enter your second option",
               ),
               CustomTextFromField(
-                  controller: option3Controller,
+                  controller: insertController.option3Controller,
                   hintText: "Enter your third option",
                   labelText: "Enter your third option",
               ),
               CustomTextFromField(
-                  controller: option4Controller,
+                  controller: insertController.option4Controller,
                   hintText: "Enter your fourth option",
                   labelText: "Enter your fourth option",
               ),
-              CustomButton(
-                  onTap: () async
-                  {
-                   if(questionController.text.isNotEmpty && option1Controller.text.isNotEmpty&&option2Controller.text.isNotEmpty&&option3Controller.text.isNotEmpty&&option4Controller.text.isNotEmpty)
-                     {
-                       DbClass dbclass=DbClass.instance;
-                       MainModel model=MainModel(
-                         question: questionController.text,
-                         option1: option1Controller.text,
-                         option2: option2Controller.text,
-                         option3: option3Controller.text,
-                         option4: option4Controller.text,
-                       );
-                     int check= await dbclass.create(model);
-                      if (check==1)
-                        {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Data inserted successfully!"))
-                          );
-                          questionController.clear();
-                          option1Controller.clear();
-                          option2Controller.clear();
-                          option3Controller.clear();
-                          option4Controller.clear();
-                        }
-                      else{
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Data Did not inserted"))
-                        );
-                      }
-                     }
-                   else
-                     {
-                       ScaffoldMessenger.of(context).showSnackBar(
-                           SnackBar(content: Text("Please Enter Question & Options First!"))
-                       );
-                     }
-
-                  },
-                  name: "Insert Data",
-              ),
-
+             Obx((){
+               return insertController.isLoading.value?CircularProgressIndicator():
+               CustomButton(
+                 onTap: (){
+                   insertController.insertData();
+                 },name: "Insert Data",
+               );
+             })
           ],),
         ),
       ),
