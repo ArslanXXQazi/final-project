@@ -135,7 +135,7 @@ class _FetchViewState extends State<FetchView> {
                      children: [
                      Row(children: [
                        CustomText(text: 'Question No ',color: Colors.blue,fontWeight: FontWeight.bold,),
-                       CustomText(text: data[index].),
+                       CustomText(text: '${index + 1}'), // Displaying the question number
                      ],),
                      SizedBox(height: height*.01,),
                      CustomText(text:data[index].question??"",fontWeight: FontWeight.bold,fontSize: 18,),
