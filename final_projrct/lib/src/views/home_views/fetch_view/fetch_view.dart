@@ -22,6 +22,7 @@ class _FetchViewState extends State<FetchView> {
   DbClass dbClass = DbClass.instance;
   List<MainModel> data = [];
   PageController pageController = PageController();
+  int selected=0;
 
   @override
   void initState() {
@@ -160,11 +161,11 @@ class _FetchViewState extends State<FetchView> {
                           Row(
                             children: [
                               CustomText(
-                                text: 'Question No ',
-                                color: Colors.blue,
+                                text: 'Question No : ',
+                                color: Colors.yellow,
                                 fontWeight: FontWeight.bold,
                               ),
-                              CustomText(text: '${index + 1}'), // Displaying the question number
+                              CustomText(text: '${index + 1}',fontWeight: FontWeight.bold,), // Displaying the question number
                             ],
                           ),
                           SizedBox(height: height * .01),
@@ -176,31 +177,51 @@ class _FetchViewState extends State<FetchView> {
                           SizedBox(height: height * .02),
                           Row(
                             children: [
-                              SelectContainer(onTap: () {}, text: "A"),
+                              SelectContainer(onTap: () {
+                                selected=1;
+                                setState(() {});
+                              },
+                                text: "A",
+                                backColor: selected==1?Colors.red:Colors.grey,
+                                fontColor: selected==1?Colors.white:Colors.grey.shade200,
+                              ),
                               SizedBox(width: 20),
-                              Expanded(child: CustomText(text: data[index].option1 ?? ""))
+                              Expanded(child: CustomText(text: data[index].option1 ?? "",color: Colors.white,))
                             ],
                           ),
                           SizedBox(height: height * .01),
                           Row(
                             children: [
-                              SelectContainer(onTap: () {}, text: "B"),
+                              SelectContainer(onTap: () {
+                                selected=2;
+                                setState(() {});
+                              },
+                                  text: "B",
+                                backColor: selected==2?Colors.red:Colors.grey,
+                                fontColor: selected==2?Colors.white:Colors.grey.shade200,
+                              ),
                               SizedBox(width: 20),
-                              Expanded(child: CustomText(text: data[index].option2 ?? ""))
+                              Expanded(child: CustomText(text: data[index].option2 ?? "",color: Colors.white,))
                             ],
                           ),
                           SizedBox(height: height * .01),
                           Row(
                             children: [
-                              SelectContainer(onTap: () {}, text: "C"),
+                              SelectContainer(onTap: () {
+                                selected=3;
+                                setState(() {});
+                              }, text: "C"),
                               SizedBox(width: 20),
-                              Expanded(child: CustomText(text: data[index].option3 ?? "",,color: Colors.white,))
+                              Expanded(child: CustomText(text: data[index].option3 ?? "",color: Colors.white,))
                             ],
                           ),
                           SizedBox(height: height * .01),
                           Row(
                             children: [
-                              SelectContainer(onTap: () {}, text: "D"),
+                              SelectContainer(onTap: () {
+                                selected=4;
+                                setState(() {});
+                              }, text: "D"),
                               SizedBox(width: 20),
                               Expanded(child: CustomText(text: data[index].option4 ?? "",color: Colors.white,))
                             ],
