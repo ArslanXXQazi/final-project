@@ -58,7 +58,7 @@ class _FetchViewState extends State<FetchView> {
     final width = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
@@ -77,142 +77,144 @@ class _FetchViewState extends State<FetchView> {
       ),
       body: data.isEmpty
           ? Center(child: CustomText(text: 'No Data Found')) // Loading Indicator if no data
-          : PageView.builder(
-        controller: pageController,
-        scrollDirection: Axis.horizontal,
-        itemCount: data.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .03, vertical: height * .02),
-            child: GestureDetector(
-              onLongPress: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: CustomText(text: 'Are you sure to want these changes'),
-                      actions: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: CustomButton(
-                                onTap: () async {
-                                  Navigator.pop(context);
-                                  bool result = await Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                      builder: (context) => UpdateData(
-                                        id: data[index].id!,
-                                        question: data[index].question ?? "",
-                                        option1: data[index].option1 ?? "",
-                                        option2: data[index].option2 ?? "",
-                                        option3: data[index].option3 ?? "",
-                                        option4: data[index].option4 ?? "",
-                                      ),
-                                    ),
-                                  );
-                                  if (result == true) {
-                                    fetchData();
-                                  }
-                                },
-                                name: 'Update',
-                              ),
-                            ),
-                            SizedBox(width: width * .02),
-                            Expanded(
-                              child: CustomButton(
-                                onTap: () async {
-                                  Navigator.pop(context);
-                                  await dbClass.deleteData(data[index].id!);
-                                  setState(() {
-                                    data.removeAt(index);
-                                  });
-                                  Get.snackbar("Deleted", "Data deleted successfully!",
-                                      snackPosition: SnackPosition.TOP,
-                                      backgroundColor: Get.theme.primaryColor);
-                                },
-                                name: 'Delete',
-                                color: Colors.red,
-                              ),
-                            ),
+          : Center(
+            child: Container(
+              height: height*.45,
+              child: PageView.builder(
+                      controller: pageController,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: data.length,
+                      itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * .03, vertical: height * .02),
+                child: GestureDetector(
+                  onLongPress: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: CustomText(text: 'Are you sure to want these changes'),
+                          actions: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CustomButton(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      bool result = await Navigator.push(
+                                        context,
+                                        CupertinoPageRoute(
+                                          builder: (context) => UpdateData(
+                                            id: data[index].id!,
+                                            question: data[index].question ?? "",
+                                            option1: data[index].option1 ?? "",
+                                            option2: data[index].option2 ?? "",
+                                            option3: data[index].option3 ?? "",
+                                            option4: data[index].option4 ?? "",
+                                          ),
+                                        ),
+                                      );
+                                      if (result == true) {
+                                        fetchData();
+                                      }
+                                    },
+                                    name: 'Update',
+                                  ),
+                                ),
+                                SizedBox(width: width * .02),
+                                Expanded(
+                                  child: CustomButton(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await dbClass.deleteData(data[index].id!);
+                                      setState(() {
+                                        data.removeAt(index);
+                                      });
+                                      Get.snackbar("Deleted", "Data deleted successfully!",
+                                          snackPosition: SnackPosition.TOP,
+                                          backgroundColor: Get.theme.primaryColor);
+                                    },
+                                    name: 'Delete',
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
-                        )
-                      ],
+                        );
+                      },
                     );
                   },
-                );
-              },
-              child: Expanded(
-                child: Container(
-                  height: height*.05,
-                  width: width * 1,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width * .02),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            CustomText(
-                              text: 'Question No ',
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            CustomText(text: '${index + 1}'), // Displaying the question number
-                          ],
-                        ),
-                        SizedBox(height: height * .01),
-                        CustomText(
-                          text: data[index].question ?? "",
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                        SizedBox(height: height * .02),
-                        Row(
-                          children: [
-                            SelectContainer(onTap: () {}, text: "A"),
-                            SizedBox(width: 20),
-                            Expanded(child: CustomText(text: data[index].option1 ?? ""))
-                          ],
-                        ),
-                        SizedBox(height: height * .01),
-                        Row(
-                          children: [
-                            SelectContainer(onTap: () {}, text: "B"),
-                            SizedBox(width: 20),
-                            Expanded(child: CustomText(text: data[index].option2 ?? ""))
-                          ],
-                        ),
-                        SizedBox(height: height * .01),
-                        Row(
-                          children: [
-                            SelectContainer(onTap: () {}, text: "C"),
-                            SizedBox(width: 20),
-                            Expanded(child: CustomText(text: data[index].option3 ?? ""))
-                          ],
-                        ),
-                        SizedBox(height: height * .01),
-                        Row(
-                          children: [
-                            SelectContainer(onTap: () {}, text: "D"),
-                            SizedBox(width: 20),
-                            Expanded(child: CustomText(text: data[index].option4 ?? ""))
-                          ],
-                        ),
-                      ],
+                  child: Container(
+                    width: width * 1,
+                    decoration: BoxDecoration(
+                      color: Colors.green.withOpacity(0.8),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: width * .02),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            children: [
+                              CustomText(
+                                text: 'Question No ',
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              CustomText(text: '${index + 1}'), // Displaying the question number
+                            ],
+                          ),
+                          SizedBox(height: height * .01),
+                          CustomText(
+                            text: data[index].question ?? "",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                          SizedBox(height: height * .02),
+                          Row(
+                            children: [
+                              SelectContainer(onTap: () {}, text: "A"),
+                              SizedBox(width: 20),
+                              Expanded(child: CustomText(text: data[index].option1 ?? ""))
+                            ],
+                          ),
+                          SizedBox(height: height * .01),
+                          Row(
+                            children: [
+                              SelectContainer(onTap: () {}, text: "B"),
+                              SizedBox(width: 20),
+                              Expanded(child: CustomText(text: data[index].option2 ?? ""))
+                            ],
+                          ),
+                          SizedBox(height: height * .01),
+                          Row(
+                            children: [
+                              SelectContainer(onTap: () {}, text: "C"),
+                              SizedBox(width: 20),
+                              Expanded(child: CustomText(text: data[index].option3 ?? "",,color: Colors.white,))
+                            ],
+                          ),
+                          SizedBox(height: height * .01),
+                          Row(
+                            children: [
+                              SelectContainer(onTap: () {}, text: "D"),
+                              SizedBox(width: 20),
+                              Expanded(child: CustomText(text: data[index].option4 ?? "",color: Colors.white,))
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
+              );
+                      },
+                    ),
             ),
-          );
-        },
-      ),
+          ),
     );
   }
 }
