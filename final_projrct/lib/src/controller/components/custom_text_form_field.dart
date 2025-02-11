@@ -26,7 +26,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(color: Colors.blue),
         ),
         hintText: hintText,
-        hintStyle: GoogleFonts.allura(),
+        hintStyle: GoogleFonts.aBeeZee(),
         labelText: lableText,
         labelStyle: GoogleFonts.aBeeZee(),
       ),

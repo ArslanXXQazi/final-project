@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFromField extends StatelessWidget {
   String hintText;
@@ -21,7 +22,10 @@ class CustomTextFromField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           labelText: labelText,
-          labelStyle: TextStyle(color: Colors.blue),
+          hintStyle: GoogleFonts.aBeeZee(
+            color: Colors.blue
+          ),
+          labelStyle: GoogleFonts.aBeeZee(),
           border: InputBorder.none,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
