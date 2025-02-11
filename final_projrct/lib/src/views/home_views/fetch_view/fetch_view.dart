@@ -210,7 +210,10 @@ class _FetchViewState extends State<FetchView> {
                               SelectContainer(onTap: () {
                                 selected=3;
                                 setState(() {});
-                              }, text: "C"),
+                              }, text: "C",
+                                backColor: selected==2?Colors.red:Colors.grey,
+                                fontColor: selected==2?Colors.white:Colors.grey.shade200,
+                              ),
                               SizedBox(width: 20),
                               Expanded(child: CustomText(text: data[index].option3 ?? "",color: Colors.white,))
                             ],
