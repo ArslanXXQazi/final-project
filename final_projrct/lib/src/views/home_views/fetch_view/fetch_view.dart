@@ -211,8 +211,8 @@ class _FetchViewState extends State<FetchView> {
                                 selected=3;
                                 setState(() {});
                               }, text: "C",
-                                backColor: selected==2?Colors.red:Colors.grey,
-                                fontColor: selected==2?Colors.white:Colors.grey.shade200,
+                                backColor: selected==3?Colors.red:Colors.grey,
+                                fontColor: selected==3?Colors.white:Colors.grey.shade200,
                               ),
                               SizedBox(width: 20),
                               Expanded(child: CustomText(text: data[index].option3 ?? "",color: Colors.white,))
@@ -224,7 +224,9 @@ class _FetchViewState extends State<FetchView> {
                               SelectContainer(onTap: () {
                                 selected=4;
                                 setState(() {});
-                              }, text: "D"),
+                              }, text: "D",
+                                backColor: selected==2?Colors.red:Colors.grey,
+                                fontColor: selected==2?Colors.white:Colors.grey.shade200,),
                               SizedBox(width: 20),
                               Expanded(child: CustomText(text: data[index].option4 ?? "",color: Colors.white,))
                             ],
