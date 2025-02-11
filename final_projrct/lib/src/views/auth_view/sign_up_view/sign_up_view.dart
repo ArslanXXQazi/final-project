@@ -1,4 +1,5 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
+import 'package:final_projrct/src/controller/components/custom_button.dart';
 import 'package:final_projrct/src/controller/components/custom_text_form_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,19 +45,11 @@ class _SignUpViewState extends State<SignUpView> {
             ),
             SizedBox(height: height*.02,),
             Center(
-              child: ElevatedButton(
-                  onPressed: (){
+              child: CustomButton(
+                  onTap: (){
                     Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignInView()));
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    minimumSize: Size(width*1, height*.07),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    )
-                  ),
-                  child: CustomText(text: 'Sign Up',color: Colors.white,fontWeight: FontWeight.bold,),
-              ),
+                  name: "Sign up")
             ),
             SizedBox(height: height*.04,),
             Row(

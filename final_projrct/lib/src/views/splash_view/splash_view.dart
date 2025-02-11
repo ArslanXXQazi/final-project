@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
     // TODO: implement initState
     super.initState();
    Future.delayed(Duration(seconds: 3),(){
-     Navigator.push(context, CupertinoPageRoute(builder: (context)=>SignInView()));
+     Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context)=>SignInView()));
    });
   }
   @override

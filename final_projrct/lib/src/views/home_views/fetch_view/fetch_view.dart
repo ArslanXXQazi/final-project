@@ -170,7 +170,7 @@ class _FetchViewState extends State<FetchView> {
                           ),
                           SizedBox(height: height * .01),
                           CustomText(
-                            text: data[index].question ?? "",
+                            text: data[index].question ?? "",color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),

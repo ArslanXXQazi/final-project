@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 class FetchController extends GetxController{
 
   DbClass dbClass=DbClass.instance;
-
   var dataList = <MainModel>[].obs;
 
   @override
