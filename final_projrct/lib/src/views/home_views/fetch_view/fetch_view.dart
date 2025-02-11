@@ -225,7 +225,7 @@ class _FetchViewState extends State<FetchView> {
                                 selected=4;
                                 setState(() {});
                               }, text: "D",
-                                backColor: selected==4?Colors.red:Colors.grey,
+                                backColor: selected==4?Colors.red:Colors.grey.shade200,
                                 fontColor: selected==4?Colors.white:Colors.black,),
                               SizedBox(width: 20),
                               Expanded(child: CustomText(text: data[index].option4 ?? "",color: Colors.white,))
