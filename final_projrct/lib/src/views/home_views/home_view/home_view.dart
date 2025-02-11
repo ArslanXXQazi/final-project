@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Icon(Icons.add,size: width*.15,color: Colors.white,),
-                CustomText(text: 'Insert Question',fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
+                BoldText(text: 'Insert Question',fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
               ],),
             ),
           ),
@@ -54,7 +54,7 @@ class HomeView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.remove_red_eye,size: width*.15,color: Colors.white,),
-                    CustomText(text: 'View Question',fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
+                    BoldText(text: 'View Question',fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
                   ],),
               ),
             ),

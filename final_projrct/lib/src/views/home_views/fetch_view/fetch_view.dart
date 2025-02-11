@@ -160,16 +160,16 @@ class _FetchViewState extends State<FetchView> {
                         children: [
                           Row(
                             children: [
-                              CustomText(
+                              BoldText(
                                 text: 'Question No : ',
                                 color: Colors.yellow,
                                 fontWeight: FontWeight.bold,
                               ),
-                              CustomText(text: '${index + 1}',fontWeight: FontWeight.bold,), // Displaying the question number
+                              BoldText(text: '${index + 1}',fontWeight: FontWeight.bold,), // Displaying the question number
                             ],
                           ),
                           SizedBox(height: height * .01),
-                          CustomText(
+                          BoldText(
                             text: data[index].question ?? "",color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,

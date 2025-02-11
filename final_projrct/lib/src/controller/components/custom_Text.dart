@@ -35,14 +35,14 @@ class BoldText extends StatelessWidget {
     required this.text,
     this.color=Colors.black,
     this.fontSize=16,
-    this.fontWeight=FontWeight.normal,
+    this.fontWeight=FontWeight.bold,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.aboreto(
+      style: GoogleFonts.adamina(
         color:color ,
         fontSize: fontSize,
         fontWeight: fontWeight,
