@@ -30,6 +30,13 @@ class _SignUpViewState extends State<SignUpView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Center(
+              child: CircleAvatar(
+                radius: width*.15,
+                backgroundImage: AssetImage('assets/login.png'),
+              ),
+            ),
+            SizedBox(height: height*.02,),
           CustomText(text: 'Sign Up',fontWeight: FontWeight.bold,fontSize: 18,),
             SizedBox(height: height*.01,),
             CustomTextFormField(
