@@ -17,7 +17,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.aboreto(
+      style: GoogleFonts.aBeeZee(
         color:color ,
         fontSize: fontSize,
         fontWeight: fontWeight,
