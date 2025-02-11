@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
   String hintText;
@@ -25,7 +26,9 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(color: Colors.blue),
         ),
         hintText: hintText,
+        hintStyle: GoogleFonts.allura(),
         labelText: lableText,
+        labelStyle: GoogleFonts.aBeeZee(),
       ),
     );
   }

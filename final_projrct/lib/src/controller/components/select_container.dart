@@ -26,7 +26,7 @@ class SelectContainer extends StatelessWidget {
           color: backColor,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(child: CustomText(text: text,color: fontColor,fontWeight: FontWeight.bold,)),
+        child: Center(child: BoldText(text: text,color: fontColor,fontWeight: FontWeight.bold,)),
       ),
     );
   }
