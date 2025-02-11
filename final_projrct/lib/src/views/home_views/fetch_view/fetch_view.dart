@@ -133,7 +133,9 @@ class _FetchViewState extends State<FetchView> {
                                       });
                                       Get.snackbar("Deleted", "Data deleted successfully!",
                                           snackPosition: SnackPosition.TOP,
-                                          backgroundColor: Get.theme.primaryColor);
+                                          backgroundColor: Colors.red,
+                                          colorText: Colors.white
+                                      );
                                     },
                                     name: 'Delete',
                                     color: Colors.red,
