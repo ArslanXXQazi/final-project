@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   VoidCallback onTap;
- 
+  String name;
+  Color color;
    CustomButton({super.key,required this.onTap,required this.name,this.color=Colors.green});
 
   @override
   Widget build(BuildContext context) {
-    final height=MediaQuery.sizeOf(context).height;
-    final width=MediaQuery.sizeOf(context).width;
+   
     return Padding(
       padding:  EdgeInsets.symmetric(vertical:height*.02),
       child: InkWell(
