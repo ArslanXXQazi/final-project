@@ -41,7 +41,9 @@ class BoldText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-    
+      text,
+      style: GoogleFonts.adamina(
+        color:color ,
         fontSize: fontSize,
         fontWeight: fontWeight,
       ),
