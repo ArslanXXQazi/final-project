@@ -28,6 +28,9 @@ class CustomText extends StatelessWidget {
 
 class BoldText extends StatelessWidget {
   String text;
+  Color color;
+  FontWeight fontWeight;
+  double  fontSize;
   BoldText({super.key,
     required this.text,
     this.color=Colors.black,
