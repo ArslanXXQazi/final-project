@@ -1,6 +1,5 @@
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:final_projrct/src/controller/components/custom_button.dart';
-import 'package:final_projrct/src/controller/components/custom_text_from_field.dart';
 import 'package:final_projrct/src/dbhelper/dbhelper.dart';
 import 'package:final_projrct/src/model/main_model.dart';
 import 'package:final_projrct/src/views/home_views/fetch_view/fetch_controller.dart';
@@ -9,6 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+
+import '../../../controller/components/custom_text_from_field.dart';
 
 class InsertView extends StatelessWidget {
   const InsertView({super.key});
@@ -40,6 +41,7 @@ class InsertView extends StatelessWidget {
                   controller:insertController.questionController,
                   hintText: "Enter your question",
                   labelText: "Enter your question",
+                  maxLines: 3,
               ),
               CustomTextFromField(
                   controller: insertController.option1Controller,

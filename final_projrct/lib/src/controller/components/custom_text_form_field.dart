@@ -4,16 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomTextFormField extends StatelessWidget {
   String hintText;
   String lableText;
+  int maxlines;
   TextEditingController controller;
    CustomTextFormField({super.key,
      required this.hintText,
      required this.lableText,
      required this.controller,
+     this.maxlines=1
    });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxlines,
       controller: controller,
       decoration: InputDecoration(
         border: InputBorder.none,

@@ -4,11 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomTextFromField extends StatelessWidget {
   String hintText;
   String labelText;
+  int    maxLines;
   TextEditingController controller;
  CustomTextFromField({super.key,
    required this.controller,
    required this.hintText,
    required this.labelText,
+   this.maxLines=1
  });
 
   @override
@@ -18,6 +20,7 @@ class CustomTextFromField extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(vertical: height*.01),
       child: TextFormField(
+        maxLines: maxLines,
         controller: controller,
         decoration: InputDecoration(
           hintText: hintText,
