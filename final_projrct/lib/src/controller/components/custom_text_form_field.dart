@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
       maxLines: maxlines,
       controller: controller,
       decoration: InputDecoration(
-        border: InputBorder.none,
+        
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(color: Colors.green),
