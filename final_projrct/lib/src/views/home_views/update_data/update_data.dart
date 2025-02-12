@@ -98,7 +98,11 @@ DbClass dbClass= DbClass.instance;
                 hintText: "Enter your first option",
                 labelText: "Enter your first option",
               ),
-             
+              CustomTextFromField(
+                controller: option2Controller,
+                hintText: "Enter your second option",
+                labelText: "Enter your second option",
+              ),
               CustomTextFromField(
                 controller: option3Controller,
                 hintText: "Enter your third option",
