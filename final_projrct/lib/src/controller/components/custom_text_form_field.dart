@@ -30,7 +30,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: GoogleFonts.aBeeZee(),
-       
+        labelText: lableText,
         labelStyle: GoogleFonts.aBeeZee(),
       ),
     );
