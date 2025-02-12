@@ -14,7 +14,12 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(vertical:height*.02),
       child: InkWell(
-      
+        onTap: onTap,
+        child: Container(
+          height: height*.075,
+          width: width*1,
+          decoration: BoxDecoration(
+            color: color,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(child: BoldText(text: name,color: Colors.white,fontSize: 20,)),

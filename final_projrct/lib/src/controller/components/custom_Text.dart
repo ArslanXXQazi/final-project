@@ -32,10 +32,7 @@ class BoldText extends StatelessWidget {
   FontWeight fontWeight;
   double  fontSize;
   BoldText({super.key,
-    required this.text,
-    this.color=Colors.black,
-    this.fontSize=16,
-    this.fontWeight=FontWeight.bold,
+  
   });
 
   @override
