@@ -16,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-    
+      maxLines: maxlines,
       controller: controller,
       decoration: InputDecoration(
         border: InputBorder.none,
@@ -29,9 +29,7 @@ class CustomTextFormField extends StatelessWidget {
           borderSide: BorderSide(color: Colors.blue),
         ),
         hintText: hintText,
-        hintStyle: GoogleFonts.aBeeZee(),
-        labelText: lableText,
-        labelStyle: GoogleFonts.aBeeZee(),
+      
       ),
     );
   }
