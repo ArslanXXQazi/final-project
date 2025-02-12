@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   VoidCallback onTap;
-  String name;
-  Color color;
+ 
    CustomButton({super.key,required this.onTap,required this.name,this.color=Colors.green});
 
   @override
@@ -15,7 +14,7 @@ class CustomButton extends StatelessWidget {
       padding:  EdgeInsets.symmetric(vertical:height*.02),
       child: InkWell(
         onTap: onTap,
-     
+        child: Container(
           height: height*.075,
           width: width*1,
           decoration: BoxDecoration(
