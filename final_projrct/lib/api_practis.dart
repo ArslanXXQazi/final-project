@@ -57,7 +57,13 @@ class _ApiPractisState extends State<ApiPractis> {
       body:  ListView.builder(
         itemCount: dataList.length,
         itemBuilder: (context, index){
-          return
+          return ListTile(
+            
+            leading: CircleAvatar(
+              child: CustomText(text: text),
+            ),
+            
+          );
         },
       )
       // Center(
