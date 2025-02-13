@@ -60,8 +60,9 @@ class _ApiPractisState extends State<ApiPractis> {
           return ListTile(
             
             leading: CircleAvatar(
-              child: CustomText(text: text),
+              child: CustomText(text: dataList[index]['id'].toString()),
             ),
+            title: CustomText(text: dataList[index]['first_name']),
             
           );
         },
