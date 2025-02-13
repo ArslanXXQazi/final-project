@@ -17,6 +17,7 @@ class _ApiPractisState extends State<ApiPractis> {
 
   int data1=0;
   int perPage=0;
+  int total=0;
 
   @override
   void initState() {
