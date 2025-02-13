@@ -19,6 +19,7 @@ class _ApiPractisState extends State<ApiPractis> {
   int perPage=0;
   int total=0;
   int totalPages=0;
+  List<dynamic> dataList=[];
 
   @override
   void initState() {
