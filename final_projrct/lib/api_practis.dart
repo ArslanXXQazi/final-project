@@ -15,7 +15,7 @@ class _ApiPractisState extends State<ApiPractis> {
   @override
 
 
-  String data1='';
+  int data1=0;
 
   @override
   void initState() {
@@ -35,17 +35,23 @@ class _ApiPractisState extends State<ApiPractis> {
         data1=data['page'];
         setState(() {});
       }
+    else
+      {
+        print('error');
+      }
 
 
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomText(text: data1),
-      ],),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(text: '$data1'),
+        ],),
+      ),
     );
   }
 }
