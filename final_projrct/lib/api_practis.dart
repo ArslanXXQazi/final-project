@@ -18,6 +18,7 @@ class _ApiPractisState extends State<ApiPractis> {
   int data1=0;
   int perPage=0;
   int total=0;
+  int totalPages=0;
 
   @override
   void initState() {
@@ -37,6 +38,7 @@ class _ApiPractisState extends State<ApiPractis> {
         data1=data['page'];
         perPage=data['per_page'];
         perPage=data['total'];
+        perPage=data['total_pages'];
         setState(() {});
       }
     else
@@ -59,6 +61,7 @@ class _ApiPractisState extends State<ApiPractis> {
             SizedBox(height: 10,),
             BoldText(text: 'total = $total'),
             SizedBox(height: 10,),
+            BoldText(text: 'total pages = $totalPages'),
         ],),
       ),
     );
