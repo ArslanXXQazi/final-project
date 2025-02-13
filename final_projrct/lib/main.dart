@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: ApiPractis(),
+      home:// ApiPractis(),
 
-      //SplashView(),
+      SplashView(),
       // FetchView()
       //InsertView(),
     );
