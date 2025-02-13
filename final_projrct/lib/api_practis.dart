@@ -67,7 +67,7 @@ class _ApiPractisState extends State<ApiPractis> {
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              CustomText(text: dataList[index]['first_name']),
+              CustomText(text: dataList[index]['last_name']),
             ],),
             trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
             
