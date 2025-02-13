@@ -53,6 +53,7 @@ class _ApiPractisState extends State<ApiPractis> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: BoldText(text: 'API VIEW',color: Colors.green,),
       ),
       body:  ListView.builder(
