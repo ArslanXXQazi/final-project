@@ -40,6 +40,7 @@ dependencies:
   path:
   get: ^4.6.6
   google_fonts: ^6.2.1
+  http: 
 
 
 dev_dependencies:
