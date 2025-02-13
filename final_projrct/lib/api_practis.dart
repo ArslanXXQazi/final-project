@@ -16,6 +16,7 @@ class _ApiPractisState extends State<ApiPractis> {
 
 
   int data1=0;
+  int perPage=0;
 
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _ApiPractisState extends State<ApiPractis> {
       {
         final data= json.decode(response.body);
         data1=data['page'];
+        perPage=data['per_page'];
         setState(() {});
       }
     else
@@ -50,6 +52,7 @@ class _ApiPractisState extends State<ApiPractis> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomText(text: '$data1'),
+            CustomText(text: '$perPage'),
         ],),
       ),
     );
