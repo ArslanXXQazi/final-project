@@ -51,8 +51,8 @@ class _ApiPractisState extends State<ApiPractis> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomText(text: '$data1'),
-            CustomText(text: '$perPage'),
+            BoldText(text: '$data1'),
+            BoldText(text: '$perPage'),
         ],),
       ),
     );
