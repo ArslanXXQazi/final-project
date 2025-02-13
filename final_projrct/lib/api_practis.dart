@@ -36,6 +36,7 @@ class _ApiPractisState extends State<ApiPractis> {
         final data= json.decode(response.body);
         data1=data['page'];
         perPage=data['per_page'];
+        perPage=data['total'];
         setState(() {});
       }
     else
