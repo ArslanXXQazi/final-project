@@ -64,7 +64,7 @@ class _ApiPractisState extends State<ApiPractis> {
               child: CustomText(text: dataList[index]['id'].toString()),
             ),
             title: CustomText(text: dataList[index]['first_name']),
-            trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: ,),
+            trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
             
           );
         },
