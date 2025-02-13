@@ -41,6 +41,7 @@ class _ApiPractisState extends State<ApiPractis> {
         perPage=data['per_page'];
         total=data['total'];
         totalPages=data['total_pages'];
+        dataList=data['data'];
         setState(() {});
       }
     else
