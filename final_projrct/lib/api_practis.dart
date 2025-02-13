@@ -61,7 +61,7 @@ class _ApiPractisState extends State<ApiPractis> {
         itemBuilder: (context, index){
           return ListTile(
             leading: CircleAvatar(
-              child: CustomText(text: dataList[index]['id'].toString()),
+              child: 
             ),
             title: CustomText(text: dataList[index]['first_name']),
             trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
