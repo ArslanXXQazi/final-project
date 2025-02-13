@@ -1,3 +1,4 @@
+import 'package:final_projrct/api_practis.dart';
 import 'package:final_projrct/src/views/home_views/fetch_view/fetch_view.dart';
 import 'package:final_projrct/src/views/home_views/insert_view/insert_view.dart';
 import 'package:final_projrct/src/views/splash_view/splash_view.dart';
@@ -36,7 +37,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: ApiPractis(),
+
+      //SplashView(),
       // FetchView()
       //InsertView(),
     );
