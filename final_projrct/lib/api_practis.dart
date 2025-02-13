@@ -54,19 +54,25 @@ class _ApiPractisState extends State<ApiPractis> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BoldText(text: 'Page = $data1'),
-            SizedBox(height: 10,),
-            BoldText(text: 'per_Page = $perPage'),
-            SizedBox(height: 10,),
-            BoldText(text: 'total = $total'),
-            SizedBox(height: 10,),
-            BoldText(text: 'total pages = $totalPages'),
-        ],),
-      ),
+      body:  ListView.builder(
+        itemCount: dataList.length,
+        itemBuilder: (context, index){
+          return
+        },
+      )
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       BoldText(text: 'Page = $data1'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'per_Page = $perPage'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'total = $total'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'total pages = $totalPages'),
+      //   ],),
+      // ),
     );
   }
 }
