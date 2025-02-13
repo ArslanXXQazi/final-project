@@ -52,17 +52,13 @@ class _ApiPractisState extends State<ApiPractis> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:   AppBar(
         centerTitle: true,
-        title: BoldText(text: 'API VIEW',color: Colors.green,),
+        title:  BoldText(text: 'API VIEW',color: Colors.green,),
       ),
       body:  ListView.builder(
         itemCount: dataList.length,
-        itemBuilder: (context, index){
-          return ListTile(
-            leading: CircleAvatar(
-            backgroundImage: NetworkImage(dataList[index]['avatar']),
-            ),
+      
             title: CustomText(text: dataList[index]['first_name']),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
