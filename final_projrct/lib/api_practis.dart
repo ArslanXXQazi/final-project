@@ -48,12 +48,11 @@ class _ApiPractisState extends State<ApiPractis> {
       {
         print('error');
       }
-
-
   }
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body:  ListView.builder(
         itemCount: dataList.length,
         itemBuilder: (context, index){
