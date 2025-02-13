@@ -15,10 +15,11 @@ class _ApiPractisState extends State<ApiPractis> {
   @override
 
 
-  int data1=0;
+  int  data1=0;
   int perPage=0;
   int total=0;
   int totalPages=0;
+
   List<dynamic> dataList=[];
 
   @override
