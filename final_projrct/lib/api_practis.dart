@@ -64,6 +64,11 @@ class _ApiPractisState extends State<ApiPractis> {
             backgroundImage: NetworkImage(dataList[index]['avatar']),
             ),
             title: CustomText(text: dataList[index]['first_name']),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              CustomText(text: dataList[index]['first_name']),
+            ],),
             trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
             
           );
