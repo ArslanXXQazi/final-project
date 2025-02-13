@@ -58,6 +58,7 @@ class _ApiPractisState extends State<ApiPractis> {
             BoldText(text: 'per_Page = $perPage'),
             SizedBox(height: 10,),
             BoldText(text: 'total = $total'),
+            SizedBox(height: 10,),
         ],),
       ),
     );
