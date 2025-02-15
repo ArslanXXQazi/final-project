@@ -1,102 +1,8 @@
-// import 'dart:convert';
-//
-// import 'package:final_projrct/src/controller/components/custom_Text.dart';
-// import 'package:flutter/material.dart';
-// import 'package:http/http.dart' as http;
-//
-// class ApiPractis extends StatefulWidget {
-//   const ApiPractis({super.key});
-//
-//   @override
-//   State<ApiPractis> createState() => _ApiPractisState();
-// }
-//
-// class _ApiPractisState extends State<ApiPractis> {
-//   @override
-//
-//
-//   int  data1=0;
-//   int perPage=0;
-//   int total=0;
-//   int totalPages=0;
-//
-//   List<dynamic> dataList=[];
-//
-//   @override
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//     fetchData();
-//   }
-//
-//   Future<void> fetchData()async{
-//
-//     final url=Uri.parse("https://reqres.in/api/users?page=2");
-//     final response= await http.get(url);
-//
-//     if (response.statusCode==200)
-//       {
-//         final data= json.decode(response.body);
-//         data1=data['page'];
-//         perPage=data['per_page'];
-//         total=data['total'];
-//         totalPages=data['total_pages'];
-//         dataList=data['data'];
-//         setState(() {});
-//       }
-//     else
-//       {
-//         print('error');
-//       }
-//   }
-//
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar:   AppBar(
-//         centerTitle: true,
-//         title:  BoldText(text: 'API VIEW',color: Colors.green,),
-//       ),
-//       body:  ListView.builder(
-//         itemCount: dataList.length,
-//         itemBuilder: (context, index){
-//           return ListTile(
-//             leading: CircleAvatar(
-//             backgroundImage: NetworkImage(dataList[index]['avatar']),
-//             ),
-//             title: CustomText(text: dataList[index]['first_name']),
-//             subtitle: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 CustomText(text: dataList[index]['last_name']),
-//               ],),
-//             trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
-//
-//           );
-//         },
-//       )
-//       // Center(
-//       //   child: Column(
-//       //     mainAxisAlignment: MainAxisAlignment.center,
-//       //     children: [
-//       //       BoldText(text: 'Page = $data1'),
-//       //       SizedBox(height: 10,),
-//       //       BoldText(text: 'per_Page = $perPage'),
-//       //       SizedBox(height: 10,),
-//       //       BoldText(text: 'total = $total'),
-//       //       SizedBox(height: 10,),
-//       //       BoldText(text: 'total pages = $totalPages'),
-//       //   ],),
-//       // ),
-//     );
-//   }
-// }
 import 'dart:convert';
 
-import 'package:final_projrct/model/userdata_model.dart';
 import 'package:final_projrct/src/controller/components/custom_Text.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 
 class ApiPractis extends StatefulWidget {
   const ApiPractis({super.key});
@@ -106,64 +12,161 @@ class ApiPractis extends StatefulWidget {
 }
 
 class _ApiPractisState extends State<ApiPractis> {
-  int data1 = 0;
-  int perPage = 0;
-  int total = 0;
-  int totalPages = 0;
+  @override
 
-  List<UserModel> userList = [];
+
+  int  data1=0;
+  int perPage=0;
+  int total=0;
+  int totalPages=0;
+
+  List<dynamic> dataList=[];
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     fetchData();
   }
 
-  Future<void> fetchData() async {
-    final url = Uri.parse("https://reqres.in/api/users?page=2");
-    final response = await http.get(url);
+  Future<void> fetchData()async{
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      setState(() {
-        data1 = data['page'];
-        perPage = data['per_page'];
-        total = data['total'];
-        totalPages = data['total_pages'];
-        userList = (data['data'] as List)
-            .map((user) => UserModel.fromMap(user))
-            .toList();
-      });
-    } else {
-      print('Error fetching data');
-    }
+    final url=Uri.parse("https://reqres.in/api/users?page=2");
+    final response= await http.get(url);
+
+    if (response.statusCode==200)
+      {
+        final data= json.decode(response.body);
+        data1=data['page'];
+        perPage=data['per_page'];
+        total=data['total'];
+        totalPages=data['total_pages'];
+        dataList=data['data'];
+        setState(() {});
+      }
+    else
+      {
+        print('error');
+      }
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:   AppBar(
         centerTitle: true,
-        title: BoldText(text: 'API VIEW', color: Colors.green),
+        title:  BoldText(text: 'API VIEW',color: Colors.green,),
       ),
-      body: ListView.builder(
-        itemCount: userList.length,
-        itemBuilder: (context, index) {
+      body:  ListView.builder(
+        itemCount: dataList.length,
+        itemBuilder: (context, index){
           return ListTile(
             leading: CircleAvatar(
-              backgroundImage: NetworkImage(userList[index].avatar??""),
+            backgroundImage: NetworkImage(dataList[index]['avatar']),
             ),
-            title: CustomText(text: userList[index].firstName??"no name availabne"),
+            title: CustomText(text: dataList[index]['first_name']),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomText(text: userList[index].lastName??""),
-              ],
-            ),
-            trailing: CustomText(text: userList[index].email??"", fontSize: 12, color: Colors.red),
+                CustomText(text: dataList[index]['last_name']),
+              ],),
+            trailing: CustomText(text: dataList[index]['email'],fontSize: 12,color: Colors.red,),
+
           );
         },
-      ),
+      )
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       BoldText(text: 'Page = $data1'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'per_Page = $perPage'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'total = $total'),
+      //       SizedBox(height: 10,),
+      //       BoldText(text: 'total pages = $totalPages'),
+      //   ],),
+      // ),
     );
   }
 }
+
+
+
+// import 'dart:convert';
+//
+// import 'package:final_projrct/model/userdata_model.dart';
+// import 'package:final_projrct/src/controller/components/custom_Text.dart';
+// import 'package:flutter/material.dart';
+// import 'package:http/http.dart' as http;
+//
+//
+// class ApiPractis extends StatefulWidget {
+//   const ApiPractis({super.key});
+//
+//   @override
+//   State<ApiPractis> createState() => _ApiPractisState();
+// }
+//
+// class _ApiPractisState extends State<ApiPractis> {
+//   int data1 = 0;
+//   int perPage = 0;
+//   int total = 0;
+//   int totalPages = 0;
+//
+//   List<UserModel> userList = [];
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     fetchData();
+//   }
+//
+//   Future<void> fetchData() async {
+//     final url = Uri.parse("https://reqres.in/api/users?page=2");
+//     final response = await http.get(url);
+//
+//     if (response.statusCode == 200) {
+//       final data = json.decode(response.body);
+//       setState(() {
+//         data1 = data['page'];
+//         perPage = data['per_page'];
+//         total = data['total'];
+//         totalPages = data['total_pages'];
+//         userList = (data['data'] as List)
+//             .map((user) => UserModel.fromMap(user))
+//             .toList();
+//       });
+//     } else {
+//       print('Error fetching data');
+//     }
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: BoldText(text: 'API VIEW', color: Colors.green),
+//       ),
+//       body: ListView.builder(
+//         itemCount: userList.length,
+//         itemBuilder: (context, index) {
+//           return ListTile(
+//             leading: CircleAvatar(
+//               backgroundImage: NetworkImage(userList[index].avatar??""),
+//             ),
+//             title: CustomText(text: userList[index].firstName??"no name availabne"),
+//             subtitle: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 CustomText(text: userList[index].lastName??""),
+//               ],
+//             ),
+//             trailing: CustomText(text: userList[index].email??"", fontSize: 12, color: Colors.red),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
