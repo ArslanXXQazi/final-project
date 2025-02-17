@@ -130,7 +130,6 @@ class _ApiPractisState extends State<ApiPractis> {
         print('Errrorororroororo');
       }
   }
-
   @override
   void initState() {
     // TODO: implement initState
@@ -149,8 +148,9 @@ class _ApiPractisState extends State<ApiPractis> {
             ),
             title: CustomText(text: userList[index].firstName??"NO NAME AVILIBLE"),
             subtitle: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+             crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                CustomText(text: userList[index].id.toString()),
                 CustomText(text: userList[index].lastName??""),
                 CustomText(text: userList[index].email??""),
               ],
