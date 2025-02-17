@@ -142,10 +142,21 @@ class _ApiPractisState extends State<ApiPractis> {
       itemCount: userList.length,
       itemBuilder: (context, intdex){
         return ListTile(
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(userList[intdex].avatar),
+          leading: Row(
+            children: [
+              CustomText(text: userList[intdex].id.toString()),
+              CircleAvatar(
+                backgroundImage: NetworkImage(userList[intdex].avatar),
+              ),
+            ],
           ),
           title: CustomText(text: userList[intdex].firstName??"NO NAME AVILIBLE"),
+          subtitle: Column(
+            children: [
+              CustomText(text: userList[intdex].lastName),
+              CustomText(text: userList[intdex].email),
+            ],
+          ),
         );
       },
     );
