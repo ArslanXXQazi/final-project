@@ -143,7 +143,7 @@ class _ApiPractisState extends State<ApiPractis> {
       itemBuilder: (context, intdex){
         return ListTile(
           leading: CircleAvatar(
-            
+            backgroundImage: NetworkImage(userList[intdex].avatar),
           ),
         );
       },
