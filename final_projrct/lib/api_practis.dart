@@ -111,7 +111,7 @@ class ApiPractis extends StatefulWidget {
 class _ApiPractisState extends State<ApiPractis> {
   @override
 
-  List<UserModel> userModel=[];
+  List<UserModel> userList=[];
 
   Future<void> fetchData()
   async{
@@ -119,8 +119,9 @@ class _ApiPractisState extends State<ApiPractis> {
     final response= await http.get(url);
     if(response.statusCode==200)
       {
-        final data=response.body;
+        final data=json.decode(response.body);
         setState(() {
+          userList=(data['data']as List).
           
         });
       }
