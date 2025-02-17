@@ -122,8 +122,12 @@ class _ApiPractisState extends State<ApiPractis> {
         final data=json.decode(response.body);
         setState(() {
           userList=(data['data']as List).
-          
+          map((user)=>UserModel.fromMap(user)).toList();
         });
+      }
+    else
+      {
+        print('Errrorororroororo');
       }
   }
 
@@ -134,7 +138,16 @@ class _ApiPractisState extends State<ApiPractis> {
   }
 
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView.builder(
+      itemCount: userList.length,
+      itemBuilder: (context, intdex){
+        return ListTile(
+          leading: CircleAvatar(
+            
+          ),
+        );
+      },
+    );
   }
 }
 
