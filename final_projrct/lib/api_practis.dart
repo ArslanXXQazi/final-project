@@ -145,6 +145,7 @@ class _ApiPractisState extends State<ApiPractis> {
           leading: CircleAvatar(
             backgroundImage: NetworkImage(userList[intdex].avatar),
           ),
+          title: CustomText(text: userList[intdex].firstName??"NO NAME AVILIBLE"),
         );
       },
     );
