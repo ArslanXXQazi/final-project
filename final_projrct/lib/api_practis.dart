@@ -135,30 +135,29 @@ class _ApiPractisState extends State<ApiPractis> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    fetchData();
   }
 
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: userList.length,
-      itemBuilder: (context, intdex){
-        return ListTile(
-          leading: Row(
-            children: [
-              CustomText(text: userList[intdex].id.toString()),
-              CircleAvatar(
-                backgroundImage: NetworkImage(userList[intdex].avatar),
-              ),
-            ],
-          ),
-          title: CustomText(text: userList[intdex].firstName??"NO NAME AVILIBLE"),
-          subtitle: Column(
-            children: [
-              CustomText(text: userList[intdex].lastName),
-              CustomText(text: userList[intdex].email),
-            ],
-          ),
-        );
-      },
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: userList.length,
+        itemBuilder: (context, index){
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(userList[index].avatar??""),
+            ),
+            title: CustomText(text: userList[index].firstName??"NO NAME AVILIBLE"),
+            subtitle: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CustomText(text: userList[index].lastName??""),
+                CustomText(text: userList[index].email??""),
+              ],
+            ),
+          );
+        },
+      )
     );
   }
 }

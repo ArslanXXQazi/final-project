@@ -1,10 +1,10 @@
 class UserModel
 {
-  int id;
-  String firstName;
-  String email;
-  String lastName;
-  String avatar;
+  int? id;
+  String? firstName;
+  String? email;
+  String? lastName;
+  String? avatar;
 
   UserModel({
     required this.id,
